@@ -1,0 +1,47 @@
+/// Get 1 to 255
+
+function get_array() {
+	var arr = [];
+	var x = 1;
+
+	while(arr.length <255){
+	arr.push(x);
+	x++;
+	}
+	return arr;
+}
+
+/// Get even 1000
+
+function sum_even_numbers() {
+	var sum = 0;
+
+	for (var num = 1; num <1001; num++){
+		if (num % 2 === 0){
+		sum += num;
+		}
+	}
+	return sum;
+}
+
+/// Sum odd 5000
+
+/// Interate an Array
+
+/// Find max
+
+/// Find average
+
+/// Array odd
+
+/// Greater than Y
+
+/// Squares
+
+/// Negatives
+
+/// Min/Max/Avg
+
+/// Swap Values
+
+/// Number to string
