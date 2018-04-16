@@ -1,0 +1,51 @@
+/*CSS reset settings here*/
+*{
+ margin: 0px;
+ padding: 0px;
+}
+#wrapper{
+ width: 940px;
+ background-color:#D5D2AE;
+ margin: 0px auto;
+ padding: 15px;
+}
+#header{
+ height: 150px;
+ display: block;
+}
+#main_content{
+ width: 920px;
+ display: inline-block;
+ padding: 15px;
+ margin-top: 15px;
+ vertical-align: top;
+}
+.subcontents_blue{
+ height: 130px;
+ width: 130px;
+ background-color:#A7C8EF;
+ display: inline-block;
+ margin: 0px 10px 10px 0px;
+ border: 5px solid black;
+ padding: 15px;
+}
+
+.subcontents_pink{
+    height: 130px;
+    width: 130px;
+    background-color: #F36870;
+    display: inline-block;
+    margin: 0px 10px 10px 0px;
+    border: 5px solid black;
+    padding: 15px;
+   }
+
+.title{
+    vertical-align: bottom;
+    text-align: center;
+}
+
+img{
+    height: 130px;
+
+}
