@@ -1,0 +1,42 @@
+/*CSS reset settings here*/
+*{
+ margin: 0px;
+ padding: 0px;
+}
+body{
+ background-color: #333;
+}
+#square{
+ width: 200px;
+ height: 200px;
+ background-color: yellow;
+ margin: 45px;
+}
+#circle{
+ width: 200px;
+ height: 200px;
+ border-radius: 100px;
+ background-color: yellow;
+ margin: 45px;
+}
+#uptriangle{
+ width: 0;
+ height: 0;
+ border-left: 100px solid transparent;
+ border-right: 100px solid transparent;
+ border-bottom: 200px solid yellow;
+ margin: 45px;
+}
+#pacman {
+ width: 0px;
+ height: 0px;
+ border-top-left-radius: 100px;
+ border-top-right-radius: 100px;
+ border-bottom-left-radius: 100px;
+ border-bottom-right-radius: 100px;
+ border-right: 100px solid transparent;
+ border-top: 100px solid yellow;
+ border-left: 100px solid yellow;
+ border-bottom: 100px solid yellow;
+ margin: 45px;
+}
