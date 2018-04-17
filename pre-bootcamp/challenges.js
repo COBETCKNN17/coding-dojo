@@ -30,7 +30,7 @@ function sum_even_numbers() {
 		var sum = 0;
 
 		for (var num = 1; num < 5001; num++){
-			if (num % 2 == 1){
+			if (num % 2 === 1){
 				sum += num;
 			}
 		}
