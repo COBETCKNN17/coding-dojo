@@ -1,0 +1,118 @@
+/*CSS reset settings here*/
+*{
+ margin: 0px;
+ padding: 0px;
+}
+body{
+ font-family: "Lucida Console", Monaco, monospace;
+ color: #FFF;
+ font-size: 12pt;
+}
+h1{
+ margin-left: 5px;
+}
+h2{
+ font-size: 16pt;
+}
+h3{
+ font-size: 14pt;
+}
+p{
+    margin: 5px;
+}
+#menu{
+    height: 15px;
+    margin-top: -30px;
+    text-align: right;
+    font-size: 9pt;
+}
+#menu a{
+    color: #FFF;
+    margin-left: 10px;
+}
+#wrapper{
+ width: 950px;
+ background-color: #DDDFD4;
+ margin: 0px auto;
+ padding: 15px;
+}
+#header{
+ height: 30px;
+ background-color: #38B0AD;
+ display: block;
+ padding: 15px;
+}
+#header img{
+ width: 35px;
+ display: inline;
+}
+#header h1{
+ width: 50px;
+ display: inline;
+ vertical-align: top;
+ color: #000;
+}
+#sidebar{
+ height: 595px;
+ width: 220px;
+ display: inline-block;
+ vertical-align: top;
+ margin: 0px 15px 0px 0px;
+ background-color: #153F43;
+ padding: 15px;
+}
+#main_content{
+ background-color: #FBE691;
+ display: block;
+ padding: 15px;
+ margin-top: 15px;
+ vertical-align: top;
+}
+#right_content{
+ vertical-align: top;
+ display: inline-block;
+ width: 645px;
+}
+.tri_box{
+ height: 165px;
+ width: 165px;
+ display: inline-block;
+ margin-right: 10px;
+ vertical-align: top;
+ background-color: #153F43;
+ padding: 15px;
+}
+.double_box{
+ height: 165px;
+ width: 272px;
+ display: inline-block;
+ margin-right: 10px;
+ margin-top: 20px;
+ vertical-align: top;
+ background-color: #153F43;
+ padding: 15px;
+}
+#single_box{
+ height: 165px;
+ width: 593px;
+ background-color: #153F43;
+ display: block;
+ margin-top: 20px;
+ padding: 15px;
+}
+#footer{
+ height: 25px;
+ background-color: #38B0AD;
+ display: block;
+ padding: 15px;
+ margin-top: 10px;
+ font-size: 11pt;
+ text-align: center;
+ color: #000;
+}
+#footer a{
+ color: #FFF;
+}
+.highlight{
+    color: #38B0AD;
+}
