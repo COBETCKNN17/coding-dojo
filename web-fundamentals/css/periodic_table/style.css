@@ -1,0 +1,64 @@
+/*CSS reset settings here*/
+*{
+ margin: 0px;
+ padding: 0px;
+}
+body{
+ font-family: Arial, Helvetica, sans-serif;
+ color: #000;
+ font-size: 10pt;
+ text-align: center;
+ background-color: #DDDFD4;
+}
+#grid_container{
+ display: inline-grid;
+ grid-column-gap: 4px;
+ grid-row-gap: 4px;
+ justify-content: space-evenly;
+}
+.blank_box{
+ width: 60px;
+ height: 60px;
+ border: 1px solid transparent;
+ display: inline-block;
+ vertical-align: top;
+ color: red;
+}
+.element_blue{
+ width: 60px;
+ height: 60px;
+ background-color: #689BFF;
+ border: 1px solid black;
+ display: inline-block;
+ vertical-align: top;
+}
+.element_yellow{
+ width: 60px;
+ height: 60px;
+ background-color: #FECB00;
+ border: 1px solid black;
+ display: inline-block;
+ vertical-align: top;
+}
+.element_pink{
+ width: 60px;
+ height: 60px;
+ background-color: #FD9A98;
+ border: 1px solid black;
+ display: inline-block;
+ vertical-align: top;
+}
+.element_green{
+ width: 60px;
+ height: 60px;
+ background-color: #1FCA21;
+ border: 1px solid black;
+ display: inline-block;
+ vertical-align: top;
+}
+.symbol{
+ font-weight: bold;
+ color: #1913A2;
+ font-size: 16pt;
+}
+   
