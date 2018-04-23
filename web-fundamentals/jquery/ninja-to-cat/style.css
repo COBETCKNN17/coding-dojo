@@ -1,0 +1,77 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    vertical-align: top;
+}
+
+body{
+    padding: 25px;
+}
+
+.containers{
+    width:150px;
+    height:150px;
+    display: inline-block;
+    margin: 15px;
+    border: 1px solid black;
+}
+
+.slice1_ninja{
+    background-image: url(img/ninja0.png);
+    width: 181px;
+    height: 43px;
+}
+
+.slice1_cat{
+    background-image: url(img/cat0.png) !important;
+    width: 181px;
+    height: 43px;
+}
+
+.slice2_ninja{
+    background-image: url(img/ninja1.png);
+    width: 181px;
+    height: 50px;
+}
+
+.slice2_cat{
+    background-image: url(img/cat1.png) !important;
+    width: 181px;
+    height: 50px;
+}
+
+.slice3_ninja{
+    background-image: url(img/ninja2.png);
+    width: 181px;
+    height: 51px;
+}
+
+.slice3_cat{
+    background-image: url(img/cat2.png) !important;
+    width: 181px;
+    height: 51px;
+}
+
+.slice4_ninja{
+    background-image: url(img/ninja3.png);
+    width: 181px;
+    height: 51px;
+}
+
+.slice4_cat{
+    background-image: url(img/cat3.png) !important;
+    width: 181px;
+    height: 51px;
+}
+
+.slice5_ninja{
+    background-image: url(img/ninja4.png);
+    width: 181px;
+    height: 61px;
+}
+
+.slice5_cat{
+    background-image: url(img/cat4.png) !important;
+    width: 181px;
+    height: 61px;
+}

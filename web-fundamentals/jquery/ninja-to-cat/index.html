@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+</html>
+<html>
+<head>
+    <title>Ninja to Cat</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src= 'http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <script type="text/javascript">
+        $(document).ready(function(){
+            console.log('The jQuery is working!');
+
+            $('.slice1_ninja').click(function(){
+                $(this).toggleClass("slice1_cat");
+            });
+
+            $('.slice2_ninja').click(function(){
+                $(this).toggleClass("slice2_cat");
+            });
+
+            $('.slice3_ninja').click(function(){
+                $(this).toggleClass("slice3_cat");
+            });
+
+            $('.slice4_ninja').click(function(){
+                $(this).toggleClass("slice4_cat");
+            });
+
+            $('.slice5_ninja').click(function(){
+                $(this).toggleClass("slice5_cat");
+            });
+
+        });
+    </script>
+</head>
+<body>
+
+<div class="slice1_ninja"></div>
+<div class="slice2_ninja"></div>
+<div class="slice3_ninja"></div>
+<div class="slice4_ninja"></div>
+<div class="slice5_ninja"></div>
+
+</body>
+</html>
