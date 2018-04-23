@@ -1,0 +1,26 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    vertical-align: top;
+}
+
+body{
+    padding: 25px;
+}
+
+img{
+    width: 150px;
+    margin-top: 10px;
+}
+
+.containers{
+    width:150px;
+    height:150px;
+    display: inline-block;
+    margin: 15px;
+    border: 1px solid black;
+}
+
+#show{
+    margin-left: 332px;
+}
