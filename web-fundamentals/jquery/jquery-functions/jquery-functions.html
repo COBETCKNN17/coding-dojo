@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+</html>
+<html>
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src= 'http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <script type="text/javascript">
+        $(document).ready(function(){
+            console.log('The jQuery is working!');
+
+            $('#turn-red-button').click(function(){
+                $('#turn-red').css('color', 'red');
+            });
+
+            $('#secret').hide();
+
+            $('#hidden').hide();
+
+            $('#cat').hide();
+
+            $('#slide-text').hide();
+
+            $('#fade-text').hide();
+
+            $('#slide-toggle-button').click(function(){
+                $('#secret').slideToggle("slow",function(){
+                });    
+            });
+
+            $('#append-button').click(function(){
+                $('.append-result').append('<p>This is a new paragraph</p>');
+            });
+
+            $('#show-button').click(function(){
+                $('#hidden').show();
+            });
+
+            $('#toggle-button').click(function(){
+                $('#cat').toggle();
+            });
+
+            $( "#slide-down-button" ).click(function() {
+                $( "#slide-text" ).slideDown( "slow", function() {
+                });
+            });
+
+            $( "#slide-up-button" ).click(function() {
+                $( "#slide-text" ).slideUp( "slow", function() {
+                });
+            });
+
+            $( "#fade-in-button" ).click(function() {
+                $( "#fade-text" ).fadeIn( "slow", function() {
+                });
+            });
+            
+            $( "#fade-out-button" ).click(function() {
+                $( "#fade-text" ).fadeOut( "slow", function() {
+                });
+            });
+
+            $( "#before-button" ).click(function() {
+                $( "#before-after" ).before( document.createTextNode("This is before text!") );
+            });
+
+            $( "#after-button" ).click(function() {
+                $( "#before-after" ).after( document.createTextNode("This is after text!") );
+            });
+        });
+    </script>
+</head>
+<body>
+
+<h2>Add Class</h2>
+<button id="turn-red-button">Click me!</button><p id="turn-red">Click the button to make this text red!</p>
+<hr>
+
+<h2>Slidetoggle</h2>
+<button id="slide-toggle-button">Click me!</button><p>Click the button to see a hidden picture!</p>
+<br>
+<img src="secret.png" id="secret">
+<hr>
+
+<h2>Append</h2>
+<button id="append-button">Click me!</button><p>Click the button to append a new paragraph!</p>
+<div class="append-result"></div>
+<hr>
+
+<h2>Show</h2>
+<button id="show-button">Click me!</button><p>Click the button to show something hidden!</p><p id="hidden">This is a secret hello!</p>
+<hr>
+
+<h2>Toggle</h2>
+<button id="toggle-button">Click me!</button><p>Click the button to toggle a cat on or off!</p><p id="cat">ლ(=ↀωↀ=)ლ</p>
+<hr>
+
+<h2>Slide Up & Down</h2>
+<button id="slide-down-button">Slide Down</button> <button id="slide-up-button">Slide Up</button><p>Click the buttons to slide the text!</p><p id="slide-text">Slide me!</p>
+<hr>
+
+<h2>Fade In & Out</h2>
+<button id="fade-in-button">Fade In</button> <button id="fade-out-button">Fade Out</button><p>Click the buttons to fade the text in and out!</p><p id="fade-text">Spooky!</p>
+<hr>
+
+<h2>Before & After</h2>
+<button id="before-button">Add Text Before</button> <button id="after-button">Add Text After</button><p id="before-after">Click the buttons to add stuff!</p>
+<hr>
+
+</body>
+</html>

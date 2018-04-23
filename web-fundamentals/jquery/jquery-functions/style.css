@@ -1,0 +1,27 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    vertical-align: top;
+}
+
+body{
+    padding: 25px;
+}
+
+button{
+    margin: 15px;
+}
+
+p{
+    display: inline;
+    margin: 15px;
+}
+
+#secret{
+    width: 150px;
+    margin-top: 10px;
+}
+
+#after-button{
+    margin-right: 15px;
+}
