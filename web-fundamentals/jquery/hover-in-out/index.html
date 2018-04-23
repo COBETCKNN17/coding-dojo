@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+</html>
+<html>
+<head>
+    <title>Hover In and Out</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src= 'http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <script type="text/javascript">
+        $(document).ready(function(){
+            console.log('The jQuery is working!');
+
+            $('div').hover(function(){
+                $(this).toggleClass("containers_alt");
+			}, function(){
+                $(this).toggleClass("containers_alt");
+			});
+        });
+    </script>
+</head>
+<body>
+
+<div class="containers"></div>
+<div class="containers"></div>
+<div class="containers"></div>
+<div class="containers"></div>
+<br><br>
+<div class="containers"></div>
+<div class="containers"></div>
+<div class="containers"></div>
+<div class="containers"></div>
+
+</body>
+</html>

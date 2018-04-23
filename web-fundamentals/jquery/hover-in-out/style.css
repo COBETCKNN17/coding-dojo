@@ -1,0 +1,28 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    vertical-align: top;
+}
+
+body{
+    padding: 25px;
+}
+
+.containers{
+    width:150px;
+    height:150px;
+    display: inline-block;
+    margin: 15px;
+    border: 1px solid black;
+    background-image: url('ninja.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.containers_alt{
+    background-image: url('ninja1.png');
+}
+
+#show{
+    margin-left: 332px;
+}

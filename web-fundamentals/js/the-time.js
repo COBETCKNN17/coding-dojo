@@ -1,8 +1,8 @@
 function ifYouDontMind(){
 
-    var hour = 9;
-    var minute = 30;
-    var period = "PM";
+    var hour = 4;
+    var minute = 15;
+    var period = "AM";
 
     if (minute < 30){
         if (period == "AM"){
