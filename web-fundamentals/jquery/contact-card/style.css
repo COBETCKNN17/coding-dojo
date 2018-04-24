@@ -1,0 +1,47 @@
+*{
+ margin: 0px;
+ padding: 0px;
+ vertical-align: top;
+}
+
+body{
+ padding: 25px;
+}
+
+form{
+ width: 350px;
+}
+
+h2 {
+ width: 350px;
+ text-decoration: underline;
+ overflow-wrap: break-word;
+}
+
+#add-container{
+ margin: 10px 0px 10px 0px;
+ width: 350px;
+ position: relative;
+}
+
+input{
+ position: absolute;
+ right: 0px;
+}
+
+.name_card{
+ border: 2px solid black;
+ width: 350px;
+ height: 150px;
+ text-align: center;
+ margin: 15px;
+ display: inline-block;
+ overflow-wrap: break-word;
+ -webkit-box-shadow: 5px 5px 0px 0px rgba(0,0,0,1);
+ -moz-box-shadow: 5px 5px 0px 0px rgba(0,0,0,1);
+ box-shadow: 5px 5px 0px 0px rgba(0,0,0,1);
+}
+
+.part_2{
+ display:none;
+}

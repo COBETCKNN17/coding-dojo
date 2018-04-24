@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+</html>
+<html>
+
+<head>
+    <title>Contact Card</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
+        crossorigin="anonymous">
+    <script type="text/javascript">
+        $(document).ready(function () {
+            console.log('The jQuery is working!');
+
+            $(document).on('click', '.name_card', function(){
+                $(this).find(".part_1").fadeOut( "fast", "linear" )
+                $(this).find(".part_2").fadeIn( "fast", "linear" )
+                });
+
+             $(document).ready(function(){
+                $("form :submit").click(function(){
+                     $("#cards").append("<div class='name_card'><div class='part_2'><p><br>" +  $("#description").val() + "</p></div>" + "<div class='part_1'><h1>" + $("#first_name").val() + "&nbsp;" + $("#last_name").val() + "</h1>" + "<br><p>Click for description!</p></div></div>")
+                return false;
+                });
+            });
+
+        });
+    </script>
+</head>
+
+<body>
+
+    <h2>User Cards</h2>
+    <div id="cards">
+        
+    </div>
+
+    <br>
+    <hr>
+    <br>
+
+    <h2>Add Users</h2>
+    <div id="add-container">
+        <form>
+            <label for="first_name">First Name:</label>
+            <input type="text" placeholder="First Name" name="first_name" id="first_name">
+            <br>
+            <label for="last_name">Last Name:</label>
+            <input type="text" placeholder="Last Name" name="last_name" id="last_name">
+            <br>
+            <label for="description">Description:</label>
+            <input type="text" placeholder="Enter description" name="description" id="description">
+            <br>
+            <input type="submit" name="submit" value="Add User">
+        </form>
+    </div>
+
+</body>
+
+</html>
