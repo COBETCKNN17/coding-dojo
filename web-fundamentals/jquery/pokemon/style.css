@@ -1,0 +1,18 @@
+*{
+ margin: 0px;
+ padding: 0px;
+ vertical-align: top;
+}
+
+.pokeball{
+ width: 120px;
+ height: 120px;
+ border: 2px solid #5e5e5e;
+ border-radius: 90px;
+ display: inline-block;
+ overflow: hidden;
+ margin: 5px;
+ text-align: center;
+ background-image: url('bg.png');
+ background-position: center;
+}

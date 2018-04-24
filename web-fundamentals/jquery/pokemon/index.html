@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+</html>
+<html>
+
+<head>
+    <title>Pokemon!</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
+        crossorigin="anonymous">
+    <script type="text/javascript">
+        $(document).ready(function () {
+            console.log('The jQuery is working!');
+
+            $(document).ready(function() {
+                for (var i = 1; i <= 151; i++) {
+                    $('#pokemon_container').append("<div class='pokeball'><img src='http://pokeapi.co/media/img/" + i + ".png'></div>");
+                }
+            });
+
+        });
+    </script>
+</head>
+
+<body>
+
+    <div id="pokemon_container"></div>
+
+</body>
+
+</html>
