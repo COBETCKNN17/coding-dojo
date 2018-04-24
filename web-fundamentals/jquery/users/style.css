@@ -1,0 +1,44 @@
+*{
+ margin: 0px;
+ padding: 0px;
+ vertical-align: top;
+}
+
+body{
+ padding: 25px;
+}
+
+table th{
+ border: 2px solid black;
+ margin: 10px 20px 10px 20px;
+ background-color: #DDD;
+ width: 200px;
+ padding: 5px;
+}
+
+tr, td{
+ border: 1px solid black;
+ margin: 10px 20px 10px 20px;
+ width: 200px;
+ padding: 5px;
+}
+
+form{
+ width: 350px;
+}
+
+h2 {
+ width: 350px;
+ text-decoration: underline;
+}
+
+#add-container{
+ margin: 10px 0px 10px 0px;
+ width: 350px;
+ position: relative;
+}
+
+input{
+ position: absolute;
+ right: 0px;
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+</html>
+<html>
+
+<head>
+    <title>Adding Users</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
+        crossorigin="anonymous">
+    <script type="text/javascript">
+        $(document).ready(function () {
+            console.log('The jQuery is working!');
+
+             $(document).ready(function(){
+                $("form :submit").click(function(){
+                     $("tbody").append("<tr><td>" + $("#first_name").val() + "</td><td>" + $("#last_name").val() + "</td><td>" + $("#email").val() + "</td><td>" + $("#contact").val() + "</td></tr>")
+                return false;
+                });
+            });
+
+        });
+    </script>
+</head>
+
+<body>
+
+    <h2>User List</h2>
+    <table>
+        <thead>
+            <tr>
+                <th class="list-header">First Name</th>
+                <th class="list-header">Last Name</th>
+                <th class="list-header">Email Address</th>
+                <th class="list-header">Contact #</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+
+    <br>
+    <hr>
+    <br>
+
+    <h2>Add Users</h2>
+    <div id="add-container">
+        <form>
+            <label for="first_name">First Name:</label>
+            <input type="text" placeholder="First Name" name="first_name" id="first_name">
+            <br>
+            <label for="last_name">Last Name:</label>
+            <input type="text" placeholder="Last Name" name="last_name" id="last_name">
+            <br>
+            <label for="email">Email Address:</label>
+            <input type="text" placeholder="Email Address" name="email" id="email">
+            <br>
+            <label for="contact">Contact No:</label>
+            <input type="text" placeholder="Phone #" name="contact" id="contact">
+            <br>
+            <input type="submit" name="submit">
+        </form>
+    </div>
+
+</body>
+
+</html>
