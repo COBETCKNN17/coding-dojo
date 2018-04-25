@@ -1,0 +1,19 @@
+*{
+ margin: 0px;
+ padding: 0px;
+ vertical-align: top;
+}
+
+#container{
+ display: inline-block;
+ width: 950px;
+ margin: 50px;
+}
+
+h2{
+ text-transform: capitalize;
+}
+
+#weather{
+ margin-top: 15px;
+}

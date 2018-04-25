@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+</html>
+<html>
+
+<head>
+    <title>Temperature Checker</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
+        crossorigin="anonymous">
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            $('form').submit(function () {
+                var city = $('input:text[name=city]').val();
+                $.get('http://api.openweathermap.org/data/2.5/weather?q=' + city + '&units=imperial&appid=f200c2e65e36a0322a9cef53a2534067', function (res) {
+                    var html_str = '';
+                    html_str += "<h2>" + city + "</h2>";
+                    html_str += "<p>" + "<b>Current Temperature:</b> " + res['main']['temp'] + " ℉</p>";
+                    html_str += "<p>" + "<b>Minimum Temperature:</b> " + res['main']['temp_min'] + " ℉</p>";
+                    html_str += "<p>" + "<b>Maximum Temperature:</b> " + res['main']['temp_max'] + " ℉</p>";
+                    $('#weather').html(html_str);
+                }, 'jsonp');
+                return false;
+            })
+        });
+    </script>
+</head>
+
+<body>
+    <div id="container">
+        <form>
+            <label for='city'>Enter City Name:
+                <input type='text' name='city' id='city' />
+            </label>
+            <input type='submit' name='submit' />
+        </form>
+        <div id="weather"></div>
+    </div>
+</body>
+
+</html>
