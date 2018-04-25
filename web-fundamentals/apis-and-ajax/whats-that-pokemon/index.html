@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+</html>
+<html>
+
+<head>
+    <title>Pokemon!</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
+        crossorigin="anonymous">
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            console.log('The jQuery is working!');
+
+            $(document).ready(function() {
+                for (var i = 1; i <= 151; i++) {
+                    $('#pokemon_container').append("<div class='pokeball' id='"+i+"'><img src='http://pokeapi.co/media/img/" + i + ".png'></div>");
+                }
+            });
+
+             $(document).on('click', '.pokeball', function(){
+                console.log("You clicked a Pokemon!");
+                var id = $(this).attr("id");
+                var html = "";
+                var url = "https://pokeapi.co/api/v2/pokemon/" + id + "/";
+                $.get(url, function(res) {
+                html = "<h2>" + res.species.name + "</h2>";
+                html += "<img class='sprite' src='" + res.sprites.front_default + "'>";
+                html += "<h4>Types:</h4>";
+                html += "<ul>";
+
+                for (var j in res.types){
+                  html += "<li>" + res.types[j].type.name + "</li>";
+                }
+                
+                html += "</ul>";
+                html += "<h4>Height:</h4>";
+                html += res.height;
+                html += "<h4>Weight:</h4>";
+                html += res.weight;
+                $('#pokedex').html(html);
+                }, "json");
+              })
+        });
+    </script>
+</head>
+
+<body>
+
+    <div id="pokemon_container"></div>
+    
+    <div id="pokedex"></div>
+
+</body>
+
+</html>
