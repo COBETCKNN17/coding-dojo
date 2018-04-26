@@ -25,4 +25,4 @@ function randomChance(quarters){
     }
 }
 
-randomChance(10);
+randomChance(100);

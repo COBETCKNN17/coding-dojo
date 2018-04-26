@@ -1,0 +1,52 @@
+*{
+ margin: 0px;
+ padding: 0px;
+ vertical-align: top;
+}
+
+body{
+ background-color: #000;
+}
+
+#house_container{
+ width: 1300px;
+ margin: 25px auto;
+}
+
+.house{
+ width: 300px;
+ height: 300px;
+ border: 3px solid #5e5e5e;
+ border-radius: 20px;
+ display: inline-block;
+ overflow: hidden;
+ margin: 5px;
+ text-align: center;
+}
+
+.house img{
+ height: 300px;
+ margin-left: -125px;
+}
+
+.house:hover{
+ opacity: .75;
+ cursor: pointer;
+}
+
+#info_box{
+ width: 800px;
+ height: 300px;
+ color: #5e5e5e;
+ border: 3px solid #5e5e5e;
+ border-radius: 20px;
+ background-color: #111;
+ overflow: hidden;
+ margin: 25px auto;
+ text-align: center;
+ padding: 45px;
+}
+
+h2, ul, li{
+ text-transform: capitalize;
+}

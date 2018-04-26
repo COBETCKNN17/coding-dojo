@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+</html>
+<html>
+
+<head>
+    <title>Game of Thrones</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
+        crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            console.log('The jQuery is working!');
+
+            $(document).on('click', '.house', function () {
+                console.log("You clicked a House!");
+                var id = $(this).attr("id");
+                var html = "";
+                var url = "https://anapioficeandfire.com/api/houses/" + id + "/";
+                $.get(url, function (res) {
+                    html = "<h2>" + res.name + "</h2>";
+                    html += "<h4>" + res.words + "</h4>";
+                    html += "<br>";
+                    html += res.titles;
+                    $('#info_box').html(html);
+                }, "json");
+            })
+        });
+    </script>
+</head>
+
+<body>
+
+    <div id="house_container">
+        <div class="house" id="362">
+            <img src="img/stark.jpg">
+        </div>
+        <div class="house" id="378">
+            <img src="img/targaryen.jpg">
+        </div>
+        <div class="house" id="229">
+            <img src="img/lannister.jpg">
+        </div>
+        <div class="house" id="17">
+            <img src="img/baratheon.png">
+        </div>
+    </div>
+
+    <div id="info_box"></div>
+
+</body>
+
+</html>
