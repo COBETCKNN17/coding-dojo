@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+</html>
+<html>
+<head>
+    <title>Sortable Ninja</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src= 'http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <script>
+        $( function() {
+          $( "#sortable" ).sortable();
+          $( "#sortable" ).disableSelection();
+        } );
+        </script>
+</head>
+<body>
+<ul id="sortable">
+    <li class="slice4_ninja"></li>
+    <li class="slice2_ninja"></li>
+    <li class="slice5_ninja"></li>
+    <li class="slice1_ninja"></li>
+    <li class="slice3_ninja"></li>
+</ul>
+
+</body>
+</html>
