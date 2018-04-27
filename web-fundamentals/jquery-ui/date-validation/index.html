@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+</html>
+<html>
+
+<head>
+    <title>Date Validation</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src= 'http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
+        crossorigin="anonymous">
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            console.log('The jQuery is working!');
+
+             $(document).ready(function(){
+                $("form :submit").click(function(){
+                    $("#cards").hide();
+                    $("#submit").css('background-color', '#89f4f9');
+                    console.log("You clicked it!");
+                    if ($("#name").val() == ""){
+                     $("#cards").show();
+                     $("#cards").html("<div class='error_box'><p>Name cannot be blank!</p></div>");
+                     $("#submit").css('background-color', '#db3f3f');
+                    }
+
+                    if ($("#to_date").val() == "" || $("#from_date").val() == ""){
+                     $("#cards").show();
+                     $("#cards").html("<div class='error_box'><p>Dates cannot be blank!</p></div>");
+                     $("#submit").css('background-color', '#db3f3f');
+                    }
+
+                    if ($("#name").val() != "" && $("#to_date").val() != "" && $("#from_date").val() != ""){
+                     $( "#dialog" ).dialog( "open" );
+                     $("#dialog").html("<p>Thanks " + $("#name").val() + ". Your cruise leaves on " + $("#from_date").val() + " and returns on " + $("#to_date").val() + ".</p>");
+                    }
+                return false;
+                });
+            });
+
+        });
+    </script>
+
+    <script>
+        
+    $(document).ready(function(){
+        $( "#dialog" ).dialog({ autoOpen: false });
+
+        //
+
+        $('#from_date').datepicker();
+
+        $('#from_date').focus(function(){
+            $('#from_date').datepicker('show');
+        });
+
+        $('#from_date').click(function(){
+            $('#from_date').datepicker('show');
+        });
+
+        //
+
+         $('#to_date').datepicker();
+
+        $('#to_date').focus(function(){
+            $('#to_date').datepicker('show');
+        });
+
+        $('#to_date').click(function(){
+            $('#to_date').datepicker('show');
+        });
+
+    });
+    
+    </script>
+
+</head>
+
+<body>
+      
+
+    <h2>Plan-a-Cruise!</h2>
+    <div id="add-container">
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" placeholder="Enter name" name="name" id="name">
+            <br>
+            <label for="from_date">From:</label>
+            <input type="text" placeholder="From: DD/MM/YY" name="from_date" id="from_date">
+            <br>
+            <label for="to_date">To:</label>
+            <input type="text" placeholder="To: DD/MM/YY" name="to_date" id="to_date">
+            <br>
+            <input type="submit" name="submit" value="Submit" id="submit">
+        </form>
+    </div>
+
+    <div id="cards">
+        
+    </div>
+
+    <div id="dialog" title="Alert"></div>
+
+</body>
+
+</html>

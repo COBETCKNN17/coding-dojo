@@ -1,0 +1,46 @@
+*{
+ margin: 0px;
+ padding: 0px;
+ vertical-align: top;
+}
+
+body{
+ padding: 25px;
+}
+
+form{
+ width: 350px;
+}
+
+h2 {
+ width: 350px;
+ text-decoration: underline;
+ overflow-wrap: break-word;
+}
+
+#add-container{
+ margin: 10px 0px 10px 0px;
+ width: 350px;
+ position: relative;
+}
+
+input{
+ position: absolute;
+ right: 0px;
+}
+
+.error_box{
+ width: 350px;
+ height: 100px;
+ color: red;
+ text-align: center;
+ margin: 25px 0px 25px 0px;
+ display: inline-block;
+ overflow-wrap: break-word;
+}
+
+#submit{
+    background-color: #89f4f9;
+    padding: 10px;
+    border-radius: 10px;
+}
