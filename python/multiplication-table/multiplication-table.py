@@ -16,19 +16,19 @@ for x in range (1,13):
 
 #Solution 2
 
-new_line = "x "
+new_line = "x  "
 
 for y in range(1,13):
     new_line+=str(y)
-    new_line+=str(" ")
+    new_line+=str("  ")
 print new_line
 new_line = ""
 
 for x in range(1,13):
     new_line+=str(x)
-    new_line+=str(" ")
+    new_line+=str("  ")
     for i in range (1,13):
         new_line+=str(i*x)
-        new_line+=str(" ")
+        new_line+=str("  ")
     print new_line
     new_line = ""
