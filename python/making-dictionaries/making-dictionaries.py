@@ -3,6 +3,11 @@ favorite_animal = ["horse", "cat", "spider", "giraffe", "ticks", "dolphins", "ll
 
 def make_dict(list1, list2):
     new_dict = {}
-    # your code here
+
+    favAnimals = zip(list1, list2)
+    new_dict = dict(favAnimals)
+
+    print new_dict
     return new_dict
+
 make_dict(name, favorite_animal)
