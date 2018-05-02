@@ -20,7 +20,7 @@ class Hospital(object):
         if len(self.patients) < self.capacity:
             self.patients.append(newPatient)
             self.patientCount += 1
-            newPatient.bed = len(self.patients) #This is not ideal, as once a patient is discharged, it does not reassign their bed number.         
+            newPatient.bedNumber = len(self.patients) #This is not ideal, as once a patient is discharged, it does not reassign their bed number.         
             print "New patient added to bed. Total patients:", self.patientCount
             print " "
         else:
@@ -30,7 +30,6 @@ class Hospital(object):
 
     def discharge(self, newPatient):
         newPatient.bedNumber = None
-        newPatient.bed = None
         self.patients.remove(newPatient)
         self.patientCount -= 1
         print newPatient.name, "has been discharged."
@@ -40,7 +39,7 @@ class Hospital(object):
     def display (self):
         print "List of patients:"
         for i in self.patients:
-            print "ID:", i.hId, "| Name:", i.name, "| Allergies:", i.allergies, "| Bed Number:", i.bed
+            print "ID:", i.hId, "| Name:", i.name, "| Allergies:", i.allergies, "| Bed Number:", i.bedNumber
             print " "
         return self
 

@@ -23,6 +23,6 @@ class Bike():
             print "Cannot reverse any further!"
         return self
 
-Bike(275, "35mph", 0).ride().ride().ride().reverse().displayInfo()
-Bike(489, "45mph", 0).ride().ride().reverse().reverse().displayInfo()
-Bike(2000, "55mph", 0).reverse().reverse().reverse().displayInfo()
+bike1 = Bike(275, "35mph", 0).ride().ride().ride().reverse().displayInfo()
+bike2 = Bike(489, "45mph", 0).ride().ride().reverse().reverse().displayInfo()
+bike3 = Bike(2000, "55mph", 0).reverse().reverse().reverse().displayInfo()
