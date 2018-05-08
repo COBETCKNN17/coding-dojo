@@ -1,0 +1,11 @@
+USE twitter
+
+INSERT INTO tweets (tweet, user_id, created_at, updated_at)
+VALUES ("This is a new tweet.", 1, NOW(), NOW())
+
+SELECT * 
+FROM users;
+
+UPDATE users SET handle = 'coolNewUsername' WHERE id = 5
+
+DELETE FROM users WHERE id = 5
