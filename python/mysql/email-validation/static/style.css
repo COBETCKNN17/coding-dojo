@@ -1,0 +1,12 @@
+*{
+    padding: 20px;
+    margin: 20px;
+}
+
+#success{
+    color: green;
+}
+
+#error{
+    color: red;
+}

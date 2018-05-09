@@ -1,0 +1,31 @@
+<html>
+
+<head>
+    <title>Email Validation</title>
+    <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
+        crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="static/style.css">
+</head>
+
+<body>
+    <h1>Enter an Email</h1>
+
+    {% with messages = get_flashed_messages() %} 
+    {% if messages %}
+        {% for message in messages %}
+            <p id="error">{{ message }}</p>
+        {% endfor %}
+    {%endif%} 
+    {%endwith%}
+
+    <form action="/process" method="post">
+        <label for="email">Email Address: 
+            <input type="text" name="email" id="email">
+        </label>
+        <input type="submit" name="go" value="Submit">
+    </form>
+
+</body>
+
+</html>
