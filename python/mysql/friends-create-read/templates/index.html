@@ -1,0 +1,50 @@
+<html>
+
+<head>
+    <title>Friends</title>
+    <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
+        crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="static/style.css">
+</head>
+
+<body>
+    <h1>These are all my friends!</h1>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Occupation</th>
+            <th>Friends Since</th>
+        </tr>
+        <tbody>
+            {% for i in friends: %}
+            <tr>
+                <td>{{ i['first_name'] }}{{' '}}{{ i['last_name'] }}</td>
+                <td>{{ i['occupation'] }}</td>
+                <td>{{ i['created_at'] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h1>Add a New Friend!</h1>
+
+    <form action='/create_friend' method="POST">
+        <label for="first_name">First Name:
+            <input type='text' name='first_name' id='first_name'>
+        </label>
+        <br>
+        <label for="last_name">Last Name:
+            <input type="text" name="last_name" id='last_name'>
+        </label>
+        <br>
+        <label for="occupation">Occupation:
+            <input type="text" name='occupation' id='occupation'>
+        </label>
+        <br>
+        <input type="submit" value='Submit'>
+    </form>
+
+</body>
+
+</html>
