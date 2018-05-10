@@ -1,0 +1,42 @@
+<html>
+
+<head>
+    <title>Random Word Generator</title>
+    <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
+        crossorigin="anonymous">
+</head>
+
+<body style="margin-left: 25px; margin-top: 10px;">
+
+    <h1>Survey</h1>
+    <form action="/survey/process" method="post">
+    {% csrf_token %}
+    <br>
+      Your Name:
+      <input type="text" name="name">
+      <br><br> Dojo Location:
+      <select name="location">
+        <option value="Chicago">Chicago</option>
+        <option value="San Jose">San Jose</option>
+        <option value="Seattle">Seattle</option>
+        <option value="The Moon">The Moon</option>
+      </select>
+      <br><br> Favorite Language:
+      <select name="favLanguage">
+        <option value="Python">Python</option>
+        <option value="HTML">HTML</option>
+        <option value="C#">C#</option>
+        <option value="JavaScript">JavaScript</option>
+      </select>
+      <br><br>
+      Comment (optional):
+      <input type="textarea" name="comment">
+      <br><br>
+      <input type="submit" name="submit" value="Button">
+    </form>
+  </body>
+
+</body>
+
+</html>

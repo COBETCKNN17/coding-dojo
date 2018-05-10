@@ -1,0 +1,24 @@
+<html>
+    <head>
+       <title>Survey</title>
+       <script src= 'http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+       <link rel="stylesheet" type="text/css" href="static/style.css">
+    </head>
+    <body style="margin-left: 25px; margin-top: 10px;">
+        <p>Thanks for submitting this form! You have submitted this form {{ request.session.submit }} time(s) now.</p>
+        <h1>Submitted Info:</h1>
+        <p>
+            <b>Name:</b> {{request.session.name}}
+            <br>
+            <b>Dojo Location:</b> {{request.session.location}}
+            <br>
+            <b>Favorite Language:</b> {{request.session.favLanguage}}
+            <br>
+            <b>Comments:</b> {{request.session.comment}}
+        </p>
+        <p>
+            <a href="/">Go Back</a>
+        </p>
+    </body>
+</html>
