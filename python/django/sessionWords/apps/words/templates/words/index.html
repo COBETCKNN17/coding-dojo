@@ -1,0 +1,38 @@
+<html>
+
+<head>
+    <title>Session Words</title>
+    <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
+        crossorigin="anonymous">
+</head>
+
+<body style="margin-left: 45px; margin-top: 20px;">
+
+    <div style="position: absolute; top: 20px; left: 45px;"></div>
+		<h3>Add A New Word</h3>
+		<form action="/add" method="POST">
+			{% csrf_token %}
+			<input type="text" name="word">
+			<h4>Choose Color</h4>
+			<label><input type="radio" name="color" value="red"> Red</label><br>
+			<label><input type="radio" name="color" value="green"> Green</label><br>
+			<label><input type="radio" name="color" value="blue"> Blue</label><br>
+			<label><input type="checkbox" name="big"> Show in BIG fonts!</label><br>
+			<input type="submit" value="Add to Session" style="color: blue;">
+		</form>
+	</div>
+	<div style="position: absolute; top: 20px; right: 45px;">
+		<form action="/clear">
+			{% csrf_token %}
+			<input type="submit" value="Clear Session" style="color: red;">
+		</form>
+		{% for x in request.session.wordSubmission %}
+			<p><span style="color: {{ x.color }}; font-size: {{ x.size }};">{{ x.word }}</span> - added {{ x.time }}</p>
+			<br>
+		{% endfor %}
+	</div>
+
+</body>
+
+</html>
