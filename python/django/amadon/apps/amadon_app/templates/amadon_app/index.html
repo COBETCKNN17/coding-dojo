@@ -1,0 +1,124 @@
+<html>
+
+<head>
+    <title>Amadon</title>
+    <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
+        crossorigin="anonymous">
+
+    <style>
+        * {
+            padding: 10px;
+        }
+
+        table,
+        tr,
+        td {
+            border: 1px solid black;
+        }
+    </style>
+    
+</head>
+
+<body style="margin-left: 45px; margin-top: 20px;">
+
+    <h1>Amadon Store!</h1>
+    <table>
+        <tr>
+            <th>Item</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Actions</th>
+        </tr>
+        <form action="/process" method="POST">
+            {% csrf_token %}
+            <tr>
+                <td>Dojo Tshirt</td>
+                <td>
+                    <label>$9.99</label>
+                    <input type='hidden' name='item_id' value='1' />
+                </td>
+                <td>
+                    <select name='quantity'>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                    </select>
+                </td>
+                <td>
+                    <input class="process" type='submit' value='Buy!' />
+                </td>
+
+            </tr>
+        </form>
+        <form action="/process" method="POST">
+            {% csrf_token %}
+            <tr>
+                <td>Dojo Sweater</td>
+                <td>
+                    <label>$13.99</label>
+                    <input type='hidden' name='item_id' value='2' />
+                </td>
+                <td>
+                    <select name='quantity'>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                    </select>
+                </td>
+                <td>
+                    <input class="process" type='submit' value='Buy!' />
+                </td>
+
+            </tr>
+        </form>
+        <form action="/process" method="POST">
+            {% csrf_token %}
+            <tr>
+                <td>Dojo Cup</td>
+                <td>
+                    <label>$62.99</label>
+                    <input type='hidden' name='item_id' value='3' />
+                </td>
+                <td>
+                    <select name='quantity'>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                    </select>
+                </td>
+                <td>
+                    <input class="process" type='submit' value='Buy!' />
+                </td>
+            </tr>
+        </form>
+        <form action="/process" method="POST">
+            {% csrf_token %}
+            <tr>
+                <td>Algorithm Book</td>
+                <td>
+                    <label>$29.99</label>
+                    <input type='hidden' name='item_id' value='4' />
+                </td>
+                <td>
+                    <select name='quantity'>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                    </select>
+                </td>
+                <td>
+                    <input class="process" type='submit' value='Buy!' />
+                </td>
+            </tr>
+        </form>
+    </table>
+    </form>
+
+</body>
+
+</html>

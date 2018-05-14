@@ -1,0 +1,26 @@
+<html>
+
+<head>
+    <title>Amadon</title>
+    <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
+        crossorigin="anonymous">
+</head>
+
+<body style="margin-left: 45px; margin-top: 20px;">
+
+    <h1>Thank you for your business!</h1>
+
+    <br>
+
+    <h3>We charged your credit card ${{request.session.sub_total}}</h3>
+
+    <p>You have spent a total of ${{request.session.total}} with Amadon.com so far!</p>
+
+    <br>
+
+    <a href="/">Go Back</a>
+
+</body>
+
+</html>
