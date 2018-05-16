@@ -17,7 +17,7 @@ def new(request):
 def create(request):
     errors= User.objects.basic_validator(request.POST)
     if len(errors):
-        for entry, message in errors.iteritems():
+        for entry, message in errors.items():
             error(request, message, extra_tags=entry)
         return redirect('/users/new')
     User.objects.create(
@@ -36,9 +36,9 @@ def edit(request,user_id):
     return render(request, 'srusers/edit.html', context)
 
 def update(request,user_id):
-    errors= User.objects.basic_validator(request.POST)
+    errors = User.objects.basic_validator(request.POST)
     if len(errors) > 0:
-        for entry, message in errors.iteritems():
+        for entry, message in errors.items():
             error(request, message, extra_tags=entry)
         return redirect('/users/{}/edit'.format(user_id))
     user_update = User.objects.get(id=user_id)
