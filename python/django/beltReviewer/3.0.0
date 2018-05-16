@@ -1,0 +1,6 @@
+Collecting protobuf
+  Downloading https://files.pythonhosted.org/packages/56/4e/93e40a9a2875b788d5c64447f33d628c5065c3b28e7264e58d73a7939f72/protobuf-3.5.2.post1-cp27-cp27m-win_amd64.whl (906kB)
+Requirement already satisfied: six>=1.9 in c:\users\nat\appdata\roaming\python\python27\site-packages (from protobuf) (1.11.0)
+Requirement already satisfied: setuptools in c:\python27\lib\site-packages (from protobuf) (28.8.0)
+Installing collected packages: protobuf
+Successfully installed protobuf-3.5.2.post1

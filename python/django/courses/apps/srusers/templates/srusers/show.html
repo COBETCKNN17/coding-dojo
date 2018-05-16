@@ -1,0 +1,39 @@
+<html>
+
+<head>
+  <title>Semi-Restful Users</title>
+  <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
+    crossorigin="anonymous">
+
+  <style>
+    table,
+    tr,
+    td,
+    th {
+      border: 1px solid black;
+      padding: 10px;
+    }
+  </style>
+</head>
+
+<body style="padding-left: 40px; padding-top: 20px;">
+  <h2>User {{user.id}}</h2>
+  <p>
+    <b>Name:</b> {{user.first_name}} {{user.last_name}}</p>
+  <p>
+    <b>Email:</b> {{user.email}}</p>
+  <p>
+    <b>Created at:</b> {{user.created_at}}</p>
+  <p>
+    <a href="/users/{{user.id}}/edit">
+      <button type="button" class="btn btn-secondary">Edit</button>
+    </a>
+    <a href="/users/{{user.id}}/destroy">
+      <button type="button" class="btn btn-danger">Delete</button>
+    </a>
+  </p>
+  <a href="/users">Go Back</a>
+</body>
+
+</html>

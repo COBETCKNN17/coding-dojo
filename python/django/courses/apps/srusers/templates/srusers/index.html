@@ -1,0 +1,56 @@
+<html>
+
+<head>
+  <title>Semi-Restful Users</title>
+  <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
+    crossorigin="anonymous">
+
+  <style>
+    table,
+    tr,
+    td,
+    th {
+      border: 1px solid black;
+      padding: 10px;
+    }
+  </style>
+</head>
+
+<body style="padding-left: 40px; padding-top: 20px;">
+  <h2>Semi-Restful Users</h2>
+  <table>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Email Address</th>
+      <th>Created At</th>
+      <th>Actions</th>
+    </tr>
+    {% for user in users %}
+    <tr>
+      <td>{{user.id}}</td>
+      <td>{{user.first_name}} {{user.last_name}}</td>
+      <td>{{user.email}}</td>
+      <td>{{user.created_at}}</td>
+      <td>
+        <a href="/users/{{user.id}}">
+          <button type="button" class="btn btn-primary">Show</button>
+        </a>
+        <a href="/users/{{user.id}}/edit">
+          <button type="button" class="btn btn-secondary">Edit</button>
+        </a>
+        <a href="/users/{{user.id}}/destroy">
+          <button type="button" class="btn btn-danger">Delete</button>
+        </a>
+      </td>
+    </tr>
+    {% endfor %}
+  </table>
+  <br>
+  <a href="/users/new">
+    <button type="button" class="btn btn-primary">Add User</button>
+  </a>
+</body>
+
+</html>
