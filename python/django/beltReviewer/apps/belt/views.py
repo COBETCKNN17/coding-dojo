@@ -44,22 +44,15 @@ def books(request):
     if 'name' not in request.session:
         return render (request, "belt/index.html")
     else:
-        authors = Author.objects.all()
-        books = Book.objects.all()
-        reviews = Review.objects.all()
+       # authors = Author.objects.all()
+       # books = Book.objects.all()
+        reviews = Review.objects.all().order_by("-id")[:3]
+        otherReviews = Review.objects.all().order_by("-id")[3:]
         return render (request, "belt/books.html", {
             "reviews": reviews,
-            "books": books,
-            "authors": authors
-        })
-
-def addBook(request):
-    if 'name' not in request.session:
-        return render (request, "belt/index.html")
-    else:
-        authors = Author.objects.all()
-        return render (request, "belt/addbook.html", {
-            "authors": authors
+            "otherReviews": otherReviews,
+          #  "books": books,
+          #  "authors": authors
         })
 
 def addAuthor(request):
@@ -81,6 +74,15 @@ def createAuthor(request):
     else:
         return redirect("/")
 
+def addBook(request):
+    if 'name' not in request.session:
+        return render (request, "belt/index.html")
+    else:
+        authors = Author.objects.all()
+        return render (request, "belt/addbook.html", {
+            "authors": authors
+        })
+
 def createBook(request):
     if request.method == "POST":
         if Book.objects.filter(title=request.POST["title"]).count() > 0:
@@ -101,6 +103,15 @@ def createBook(request):
             return redirect("/")
     else:
         return redirect("/books/add")
+
+def showBook(request, id):
+    book = Book.objects.get(id=id) 
+    reviews = Review.objects.filter(book_id=id)
+    context= {
+        "book": book,
+        "reviews": reviews,
+    }
+    return render (request, "belt/showbook.html", context)
 
 def logout(request):
     request.session.clear()

@@ -13,25 +13,48 @@
   {% if messages %} {% for message in messages %}
   <p class="errors">{{message}}</p>
   {% endfor %} {% endif %}
-  <a href="/books/add"><button  class="btn btn-success" style="display: inline-block;">Add a Book and Review</button></a> 
-  <a href="/books/addauthor"><button  class="btn btn-info" style="display: inline-block;">Add an Author</button></a>
+  <a href="/books/add">
+    <button class="btn btn-success" style="display: inline-block;">Add a Book and Review</button>
+  </a>
+  <a href="/books/addauthor">
+    <button class="btn btn-info" style="display: inline-block;">Add an Author</button>
+  </a>
   <form action="/logout" method="post" style="display: inline-block;">
     {% csrf_token %}
     <input type="submit" name="" class="btn btn-danger" style="display: inline-block;" value="Log Out">
   </form>
-  <br><br>
-  <h2>Recent book reviews:</h2>
   <br>
-  {% if reviews %}
-    {% for review in reviews %}
-      <p><strong><a href="#">{{review.book.title}}</strong></a></p>
-      <p>By: {{review.book.author.name}}</p>
-      <p><strong>Rating: {{review.rating}}</strong></p>
-      <p>{{review.user.name}} says: {{review.review_text}}</p>
-      <p>{{review.created_at}}</p>
-      <hr>
-    {% endfor %}
-  {% endif %}
+  <br>
+  <div id="recent-reviews" style="width: 650px;">
+    <h2>Recent book reviews:</h2>
+    <br> {% if reviews %} {% for review in reviews %}
+    <p>
+      <strong>
+        <a href="/books/{{review.book_id}}">{{review.book.title}}</strong>
+      </a>
+    </p>
+    <p>By: {{review.book.author.name}}</p>
+    <p>
+      <strong>Rating: {{review.rating}}</strong>
+    </p>
+    <p>
+      <a href="/books/{{review.user_id}}">{{review.user.name}}</a> says: "{{review.review_text}}"</p>
+    <p>{{review.created_at}}</p>
+    <hr> {% endfor %} {% endif %}
+  </div>
+
+  <div id="other-books" style="padding: 20px; position: absolute; right: 40px; top: 40px; width: 450px; height: 350px;">
+    <h3>Other books with reviews:</h3>
+    <div id="book-list" style="overflow-y: scroll; width: 425px; height: 250px;">
+      {% if reviews %} {% for review in otherReviews %}
+      <p>
+        <strong>
+          <a href="/books/{{review.book_id}}">{{review.book.title}}</strong>
+        </a>
+      </p>
+      {% endfor %} {% endif %}
+    </div>
+  </div>
 </body>
 
 </html>
