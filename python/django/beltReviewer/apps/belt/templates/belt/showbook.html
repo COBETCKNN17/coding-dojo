@@ -19,14 +19,31 @@
   <h3>Reviews:</h3>
   <div style="width: 650px;">
     {% for review in reviews %}
-    <strong>Rating: {{review.rating}}</strong>
+     <strong>
+        <a href="/books/{{review.book_id}}">{{review.book.title}}</strong>
+      </a>
+    </p>
+    <p>By: {{review.book.author.name}}</p>
+    <p>
+      <strong>Rating: {{review.rating}}</strong>
     </p>
     <p>
-      <a href="/books/{{review.user_id}}">{{review.user.name}}</a> says: "{{review.review_text}}"</p>
+      <a href="/books/users/{{review.user_id}}">{{review.user.name}}</a> says: "{{review.review_text}}"</p>
     <p>{{review.created_at}}</p>
     <hr> {% endfor %}
   </div>
-  <button class="btn btn-warning"><a href="/books">Go Back</a></button>
+  <div id="other-books" style="padding: 20px; position: absolute; right: 40px; top: 40px; width: 450px; height: 350px;">
+    <h3>Add a Review:</h3>
+    <form action="/books/addreview/{{book.id}}" method="post">
+      {% csrf_token %}
+    <p>Review: <input type="text" name="review"></p>
+    <p>Rating: <input type="number" name="rating"></p>
+
+    <input type="submit" name="addreview" class="btn btn-success" value="Add Review">
+  </form>
+  </div>
+  <a href="/books"><button class="btn btn-warning">Go Back</button></a>
+  <br><br>
 </body>
 
 </html>

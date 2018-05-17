@@ -38,7 +38,7 @@
       <strong>Rating: {{review.rating}}</strong>
     </p>
     <p>
-      <a href="/books/{{review.user_id}}">{{review.user.name}}</a> says: "{{review.review_text}}"</p>
+      <a href="/books/users/{{review.user_id}}">{{review.user.name}}</a> says: "{{review.review_text}}"</p>
     <p>{{review.created_at}}</p>
     <hr> {% endfor %} {% endif %}
   </div>

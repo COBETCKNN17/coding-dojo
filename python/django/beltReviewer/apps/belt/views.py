@@ -100,19 +100,44 @@ def createBook(request):
                 user_id = request.session['user_id'],
                 book_id = book.id
             )
+            messages.add_message( request, messages.ERROR, "Your book and review have been added!" )
             return redirect("/")
     else:
         return redirect("/books/add")
 
 def showBook(request, id):
+
     book = Book.objects.get(id=id) 
     reviews = Review.objects.filter(book_id=id)
     context= {
         "book": book,
         "reviews": reviews,
     }
+
     return render (request, "belt/showbook.html", context)
+
+def showUser(request, id):
+    user = User.objects.get(id=id) 
+    reviews = Review.objects.filter(user_id=id)
+    context= {
+        "user": user,
+        "reviews": reviews,
+    }
+    return render (request, "belt/showuser.html", context)
 
 def logout(request):
     request.session.clear()
     return redirect("/")
+
+def addReview(request, id):
+    if request.method == "POST":
+        review = Review.objects.create(
+            review_text = request.POST["review"],
+            rating = request.POST["rating"],
+            user_id = request.session['user_id'],
+            book_id = id
+        )
+        messages.add_message( request, messages.ERROR, "Your review has been added!" )
+        return redirect("/")
+    else:
+        return redirect("/")
