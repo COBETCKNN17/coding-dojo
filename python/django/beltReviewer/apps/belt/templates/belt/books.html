@@ -5,10 +5,33 @@
   <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
     crossorigin="anonymous">
-  <link rel="stylesheet" href="static/belt/style.css">
+  <link rel="stylesheet" href="../static/belt/style.css">
 </head>
-    <body>
-        <h1>Books!</h1>
 
-    </body>
+<body>
+  <h1>Welcome, {{request.session.name}}!</h1>
+  {% if messages %} {% for message in messages %}
+  <p class="errors">{{message}}</p>
+  {% endfor %} {% endif %}
+  <a href="/books/add"><button  class="btn btn-success" style="display: inline-block;">Add a Book and Review</button></a> 
+  <a href="/books/addauthor"><button  class="btn btn-info" style="display: inline-block;">Add an Author</button></a>
+  <form action="/logout" method="post" style="display: inline-block;">
+    {% csrf_token %}
+    <input type="submit" name="" class="btn btn-danger" style="display: inline-block;" value="Log Out">
+  </form>
+  <br><br>
+  <h2>Recent book reviews:</h2>
+  <br>
+  {% if reviews %}
+    {% for review in reviews %}
+      <p><strong><a href="#">{{review.book.title}}</strong></a></p>
+      <p>By: {{review.book.author.name}}</p>
+      <p><strong>Rating: {{review.rating}}</strong></p>
+      <p>{{review.user.name}} says: {{review.review_text}}</p>
+      <p>{{review.created_at}}</p>
+      <hr>
+    {% endfor %}
+  {% endif %}
+</body>
+
 </html>

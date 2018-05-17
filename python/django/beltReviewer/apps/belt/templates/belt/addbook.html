@@ -1,0 +1,36 @@
+<html>
+
+<head>
+  <title>Belt Reviewer</title>
+  <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="../static/belt/style.css">
+</head>
+
+<body>
+  <h1>Add a New Book and Review</h1>
+  {% if messages %} {% for message in messages %}
+  <p class="errors">{{message}}</p>
+  {% endfor %} {% endif %}
+  <form action="/books/createbook" method="post">
+    {% csrf_token %}
+    <p>Title: <input type="text" name="title"></p>
+
+    <p>Author: 
+      <select name="author">
+        {% for author in authors %}
+          <option value="{{author.id}}">{{author.name}}</option>
+        {% endfor %}
+      </select></p>
+
+    <p>Review: <input type="text" name="review"></p>
+
+    <p>Rating: <input type="number" name="rating"></p>
+
+
+    <input type="submit" name="addbook" class="btn btn-success" value="Add Book and Review"> <button class="btn btn-warning"><a href="/books">Go Back</a></button>
+  </form>
+</body>
+
+</html>

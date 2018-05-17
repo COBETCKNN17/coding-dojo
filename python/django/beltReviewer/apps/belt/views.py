@@ -1,12 +1,15 @@
 from __future__ import unicode_literals
-from django.shortcuts import render, HttpResponse, redirect
-from .models import User
+from django.shortcuts import render, HttpResponse, redirect, reverse
+from .models import Author, User, Book, Review
 import re
 from django.contrib import messages
 import bcrypt
 
 def index(request):
-    return render (request, "belt/index.html")
+    if 'name' not in request.session:
+        return render (request, "belt/index.html")
+    else:
+        return render (request, "belt/books.html")
 
 def register(request):
 	if request.method == "POST":
@@ -23,6 +26,9 @@ def login(request):
         
         if isValid:
             print ("Password match!")
+            request.session['name'] = user.name
+            request.session['email'] = user.email
+            request.session['user_id'] = user.id
             return redirect ("/books")
 
         else:
@@ -35,4 +41,67 @@ def login(request):
         return redirect("/")
 
 def books(request):
-    return render (request, "belt/books.html")
+    if 'name' not in request.session:
+        return render (request, "belt/index.html")
+    else:
+        authors = Author.objects.all()
+        books = Book.objects.all()
+        reviews = Review.objects.all()
+        return render (request, "belt/books.html", {
+            "reviews": reviews,
+            "books": books,
+            "authors": authors
+        })
+
+def addBook(request):
+    if 'name' not in request.session:
+        return render (request, "belt/index.html")
+    else:
+        authors = Author.objects.all()
+        return render (request, "belt/addbook.html", {
+            "authors": authors
+        })
+
+def addAuthor(request):
+    if 'name' not in request.session:
+        return render (request, "belt/index.html")
+    else:
+        return render (request, "belt/addauthor.html")
+
+def createAuthor(request):
+    if request.method == "POST":
+        if Author.objects.filter(name=request.POST["name"]).count() > 0:
+            messages.add_message( request, messages.ERROR, "An author with this name already exists!" )
+            return redirect("/")
+        else:
+            author = Author.objects.create(
+                name = request.POST["name"],
+            )
+            return redirect("/")
+    else:
+        return redirect("/")
+
+def createBook(request):
+    if request.method == "POST":
+        if Book.objects.filter(title=request.POST["title"]).count() > 0:
+            messages.add_message( request, messages.ERROR, "An book with this name already exists!" )
+            return redirect("/")
+        else:
+            book = Book.objects.create(
+                title = request.POST["title"],
+                author_id = request.POST["author"]
+            )
+
+            review = Review.objects.create(
+                review_text = request.POST["review"],
+                rating = request.POST["rating"],
+                user_id = request.session['user_id'],
+                book_id = book.id
+            )
+            return redirect("/")
+    else:
+        return redirect("/books/add")
+
+def logout(request):
+    request.session.clear()
+    return redirect("/")
