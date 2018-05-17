@@ -62,17 +62,20 @@ def addAuthor(request):
         return render (request, "belt/addauthor.html")
 
 def createAuthor(request):
-    if request.method == "POST":
-        if Author.objects.filter(name=request.POST["name"]).count() > 0:
-            messages.add_message( request, messages.ERROR, "An author with this name already exists!" )
-            return redirect("/")
-        else:
-            author = Author.objects.create(
-                name = request.POST["name"],
-            )
-            return redirect("/")
+    if 'name' not in request.session:
+        return render (request, "belt/index.html")
     else:
-        return redirect("/")
+        if request.method == "POST":
+            if Author.objects.filter(name=request.POST["name"]).count() > 0:
+                messages.add_message( request, messages.ERROR, "An author with this name already exists!" )
+                return redirect("/")
+            else:
+                author = Author.objects.create(
+                    name = request.POST["name"],
+                )
+                return redirect("/")
+        else:
+            return redirect("/")
 
 def addBook(request):
     if 'name' not in request.session:
@@ -84,60 +87,71 @@ def addBook(request):
         })
 
 def createBook(request):
-    if request.method == "POST":
-        if Book.objects.filter(title=request.POST["title"]).count() > 0:
-            messages.add_message( request, messages.ERROR, "An book with this name already exists!" )
-            return redirect("/")
-        else:
-            book = Book.objects.create(
-                title = request.POST["title"],
-                author_id = request.POST["author"]
-            )
+    if 'name' not in request.session:
+        return render (request, "belt/index.html")
+    else:
+        if request.method == "POST":
+            if Book.objects.filter(title=request.POST["title"]).count() > 0:
+                messages.add_message( request, messages.ERROR, "An book with this name already exists!" )
+                return redirect("/")
+            else:
+                book = Book.objects.create(
+                    title = request.POST["title"],
+                    author_id = request.POST["author"]
+                )
 
+                review = Review.objects.create(
+                    review_text = request.POST["review"],
+                    rating = request.POST["rating"],
+                    user_id = request.session['user_id'],
+                    book_id = book.id
+                )
+                messages.add_message( request, messages.ERROR, "Your book and review have been added!" )
+                return redirect("/")
+        else:
+            return redirect("/books/add")
+
+def showBook(request, id):
+    if 'name' not in request.session:
+        return render (request, "belt/index.html")
+    else:
+        book = Book.objects.get(id=id) 
+        reviews = Review.objects.filter(book_id=id)
+        context= {
+            "book": book,
+            "reviews": reviews,
+        }
+
+        return render (request, "belt/showbook.html", context)
+
+def showUser(request, id):
+    if 'name' not in request.session:
+        return render (request, "belt/index.html")
+    else:
+        user = User.objects.get(id=id) 
+        reviews = Review.objects.filter(user_id=id)
+        context= {
+            "user": user,
+            "reviews": reviews,
+        }
+        return render (request, "belt/showuser.html", context)
+
+def addReview(request, id):
+    if 'name' not in request.session:
+        return render (request, "belt/index.html")
+    else:
+        if request.method == "POST":
             review = Review.objects.create(
                 review_text = request.POST["review"],
                 rating = request.POST["rating"],
                 user_id = request.session['user_id'],
-                book_id = book.id
+                book_id = id
             )
-            messages.add_message( request, messages.ERROR, "Your book and review have been added!" )
+            messages.add_message( request, messages.ERROR, "Your review has been added!" )
             return redirect("/")
-    else:
-        return redirect("/books/add")
-
-def showBook(request, id):
-
-    book = Book.objects.get(id=id) 
-    reviews = Review.objects.filter(book_id=id)
-    context= {
-        "book": book,
-        "reviews": reviews,
-    }
-
-    return render (request, "belt/showbook.html", context)
-
-def showUser(request, id):
-    user = User.objects.get(id=id) 
-    reviews = Review.objects.filter(user_id=id)
-    context= {
-        "user": user,
-        "reviews": reviews,
-    }
-    return render (request, "belt/showuser.html", context)
+        else:
+            return redirect("/")
 
 def logout(request):
     request.session.clear()
     return redirect("/")
-
-def addReview(request, id):
-    if request.method == "POST":
-        review = Review.objects.create(
-            review_text = request.POST["review"],
-            rating = request.POST["rating"],
-            user_id = request.session['user_id'],
-            book_id = id
-        )
-        messages.add_message( request, messages.ERROR, "Your review has been added!" )
-        return redirect("/")
-    else:
-        return redirect("/")
