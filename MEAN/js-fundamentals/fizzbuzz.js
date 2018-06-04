@@ -1,9 +1,9 @@
 function fizzBuzz(num) {
-    if (!(num>0)){
+    if (!(num > 0)) {
         console.log("Parameter must be a positive number.");
         return;
     }
-    else{
+    else {
         for (var i = 1; i <= num; i++) {
             if ((i % 3 == 0) && (i % 5 == 0)) console.log('FizzBuzz');
             else if (i % 3 == 0) console.log('Fizz');
