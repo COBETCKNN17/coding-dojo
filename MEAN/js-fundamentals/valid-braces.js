@@ -1,0 +1,5 @@
+function validBraces(data){
+
+}
+
+validBraces("[]]{})(()(()}{{}[")
