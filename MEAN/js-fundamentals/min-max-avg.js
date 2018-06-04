@@ -22,6 +22,8 @@ function maxMinAvg(arr) {
 var avg = sum/arr.length;
 var arrnew = [max,min,avg];
 
+console.log("The maximum value is: ", max, "The minimum value is: ", min, "The average is: ", avg)
+
 return arrnew;
 
 }
