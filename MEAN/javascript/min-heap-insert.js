@@ -2,7 +2,7 @@
 
 function minHeapInsert(arr, val){
     arr.push(val);
-    var thischild = arr[arr.length-1];
+    var thischild = arr[arr.length];
     while (thischild.value < thischild.parent.value){
         temp = thischild.index;
         thischild.index = thischild.parent.index;
@@ -16,7 +16,7 @@ minHeapInsert([2,3,4,5], 1)
 
 function minHeapInsertNew(arr, val){
     arr.push(val);
-    var current = arr.length-1;
+    var current = arr.length;
     while (arr[current] < arr[current-1]){
         temp = arr[current];
         arr[current] = arr[current-1];
