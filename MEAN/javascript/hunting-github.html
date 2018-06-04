@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+</html>
+<html>
+
+<head>
+    <title>Hunting Github</title>
+    <meta charset="UTF-8">
+    <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
+        crossorigin="anonymous">
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('button').click(function () {
+                var myname;
+                $.get("https://api.github.com/users/catawump", 
+                function (data) {
+                        console.log(data);
+                        myname = data.login;
+                        console.log("My Name:", myname);
+                        $('p').html("My GitHub Username is: " +myname);
+                    })
+            })
+
+        });
+    </script>
+</head>
+
+<body>
+    <button type="button" class="btn btn-primary" style="margin: 15px;">Click for my Github Username</button>
+    <p style="margin: 15px;"></p>
+
+</body>
+
+</html>
