@@ -13,6 +13,7 @@ function Ninja(name) {
     }
 
     this.drinkSake = function () {
+        this.health += 10;
         console.log(this.name + " drinks some sake. Health is now " + this.health);
     }
 }
