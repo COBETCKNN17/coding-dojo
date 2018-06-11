@@ -1,0 +1,51 @@
+<html>
+
+<head>
+  <title>Chinchilla Dashboard</title>
+  <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
+    crossorigin="anonymous">
+
+  <style>
+    table,
+    tr,
+    td,
+    th {
+      border: 1px solid black;
+      padding: 10px;
+    }
+  </style>
+</head>
+
+<body style="padding-left: 40px; padding-top: 20px;">
+  <h2>Chinchilla Dashboard</h2>
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Color</th>
+      <th>Age</th>
+      <th>Edit</th>
+    </tr>
+    <% for (var chinchilla of chinchillas) { %>
+    <tr>
+      <td><%= chinchilla.name %></td>
+      <td><%= chinchilla.color %></td>
+      <td><%= chinchilla.age %></td>
+      <td>
+        <a href="/<%= chinchilla._id %>">
+          <button type="button" class="btn btn-primary">Show</button></a>
+        <a href="/edit/<%= chinchilla._id %>">
+          <button type="button" class="btn btn-secondary">Edit</button></a>
+        <a href="/delete/<%= chinchilla._id %>">
+          <button type="button" class="btn btn-danger">Delete</button></a>
+      </td>
+    </tr>
+    <% } %>
+  </table>
+  <br>
+  <a href="/new">
+    <button type="button" class="btn btn-primary">Add Chinchilla</button>
+  </a>
+</body>
+
+</html>

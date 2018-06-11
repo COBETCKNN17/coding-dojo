@@ -1,0 +1,44 @@
+<html>
+
+<head>
+  <title>Chinchilla Dashboard</title>
+  <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
+    crossorigin="anonymous">
+
+  <style>
+    table,
+    tr,
+    td,
+    th {
+      border: 1px solid black;
+      padding: 10px;
+    }
+  </style>
+</head>
+
+<body style="padding-left: 40px; padding-top: 20px;">
+    <h2>Edit Chinchilla</h2>
+
+  <form action="/update/<%= chinchilla._id %>" method="post">
+
+    <p>Name:
+      <input type="text" name="name" value="<%= chinchilla.name %>">
+    </p>
+    <p>Color:
+      <input type="text" name="color" value="<%= chinchilla.color %>">
+    </p>
+    <p>Age:
+      <input type="text" name="age" value="<%= chinchilla.age %>">
+    </p>
+    <p>
+      <input type="submit" value="Update" class="btn btn-success">
+    </p>
+  </form>
+  <p>
+    <a href="/">Go Back</a>
+
+  </p>
+</body>
+
+</html>
