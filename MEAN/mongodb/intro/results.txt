@@ -1,0 +1,89 @@
+- use my_first_db
+
+- db.students.find()
+
+Results:
+{ "_id" : ObjectId("5b1ea579ba713a36884f4653"), "name" : "Nat", "home_state" : "IL", "lucky_number" : "3", "birthday" : { "month" : NumberLong(11), "day" : "7", "year" : "1988" } }
+{ "_id" : ObjectId("5b1ea605b81c123688913390"), "name" : "Will", "home_state" : "VA", "lucky_number" : "3", "birthday" : { "month" : NumberLong(7), "day" : "13", "year" : "1984" } }
+{ "_id" : ObjectId("5b1ea633b81c123688913391"), "name" : "Balazs", "home_state" : "NY", "lucky_number" : "7", "birthday" : { "month" : NumberLong(5), "day" : "31", "year" : "1977" } }
+{ "_id" : ObjectId("5b1ea658b81c123688913392"), "name" : "Mike", "home_state" : "IL", "lucky_number" : "420", "birthday" : { "month" : NumberLong(6), "day" : "9", "year" : "1995" } }
+{ "_id" : ObjectId("5b1ea673b81c123688913393"), "name" : "Brian", "home_state" : "IL", "lucky_number" : "23", "birthday" : { "month" : NumberLong(7), "day" : "31", "year" : "1982" } }
+
+- db.students.find({ $or: [ { home_state: "WA" }, { home_state: "CA" } ] })
+
+Results:
+There aren't any. They didn't specify that we should use those states.
+
+- db.students.find({lucky_number: {$gt: 3}})
+
+Results:
+{ "_id" : ObjectId("5b1ea633b81c123688913391"), "name" : "Balazs", "home_state" : "NY", "lucky_number" : "7", "birthday" : { "month" : NumberLong(5), "day" : "31", "year" : "1977" } }
+{ "_id" : ObjectId("5b1ea658b81c123688913392"), "name" : "Mike", "home_state" : "IL", "lucky_number" : "420", "birthday" : { "month" : NumberLong(6), "day" : "9", "year" : "1995" } }
+{ "_id" : ObjectId("5b1ea673b81c123688913393"), "name" : "Brian", "home_state" : "IL", "lucky_number" : "23", "birthday" : { "month" : NumberLong(7), "day" : "31", "year" : "1982" } }
+
+- db.students.find({lucky_number: {$lte: 10}})
+
+Results:
+{ "_id" : ObjectId("5b1ea579ba713a36884f4653"), "name" : "Nat", "home_state" : "IL", "lucky_number" : "3", "birthday" : { "month" : NumberLong(11), "day" : "7", "year" : "1988" } }
+{ "_id" : ObjectId("5b1ea605b81c123688913390"), "name" : "Will", "home_state" : "VA", "lucky_number" : "3", "birthday" : { "month" : NumberLong(7), "day" : "13", "year" : "1984" } }
+{ "_id" : ObjectId("5b1ea633b81c123688913391"), "name" : "Balazs", "home_state" : "NY", "lucky_number" : "7", "birthday" : { "month" : NumberLong(5), "day" : "31", "year" : "1977" } }
+
+- db.students.updateMany({},{ $push: { interests: { $each: ["coding","brunch","MongoDB"]}}})
+
+Results: 
+{ "acknowledged" : true, "matchedCount" : 5, "modifiedCount" : 5 }
+
+- db.students.update({name: "Will"},{ $addToSet: { interests: { $each: ["Video Games"]}}})
+
+Results: 
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+
+- db.students.update({name: "Brian"},{ $push: { interests: { $each: ["Taxes"]}}})
+
+Results:
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+
+- db.students.update({name: "Brian"},{ $pop: { interests: 1}})
+
+Results:
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+
+- db.students.deleteMany({ $or: [ { home_state: "WA" }, { home_state: "NY" } ] }, true )
+
+Results:
+{ "acknowledged" : true, "deletedCount" : 1 }
+
+- db.students.remove({name: "Nat"})
+
+Result:
+WriteResult({ "nRemoved" : 1 })
+
+- db.students.remove({lucky_number: {$gt: 5}},1)
+
+Result: 
+WriteResult({ "nRemoved" : 1 })
+
+- db.students.update({},{$set: {number_of_belts: 0 }}, {multi: true})
+
+Result: 
+WriteResult({ "nMatched" : 3, "nUpserted" : 0, "nModified" : 3 })
+
+- db.students.update({home_state: "VA"},{$set: {number_of_belts: 1 }}, {multi: true})
+
+Result: 
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+
+- db.students.update({},{ $rename: { 'number_of_belts': 'belts_earned' }}, {multi: true})
+
+Result:
+WriteResult({ "nMatched" : 3, "nUpserted" : 0, "nModified" : 3 })
+
+- db.students.update({},{ $unset: { 'lucky_number': "" }}, {multi: true})
+
+Result:
+WriteResult({ "nMatched" : 3, "nUpserted" : 0, "nModified" : 3 })
+
+- db.students.updateMany({},{ $set: { updated_on: new Date(2018, 06, 11)}})
+
+Result:
+{ "acknowledged" : true, "matchedCount" : 3, "modifiedCount" : 3 }
