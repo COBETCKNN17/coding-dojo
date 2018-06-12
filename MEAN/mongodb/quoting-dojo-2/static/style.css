@@ -1,0 +1,12 @@
+*{
+    margin: 5px;
+    padding: 5px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+#container{
+    border: 2px solid grey;
+    border-radius: 15px;
+    width: 600px;
+    background-color: #EEE;
+}
