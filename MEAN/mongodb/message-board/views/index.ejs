@@ -1,0 +1,73 @@
+<html>
+
+<head>
+  <title>Message Board</title>
+  <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
+    crossorigin="anonymous">
+</head>
+
+<body>
+
+  <div class="container">
+
+    <h1>The Dojo Message Board</h1>
+    <hr>
+    <% if(typeof(errors) != 'undefined' ) { %>
+      <% for (var i in errors) { %>
+        <p style="color: red;">
+          <%= errors[i].message %>
+        </p>
+      <% } %>
+    <% } %>
+
+    <div>
+      <form id="form" style="width: 75%; padding: 15px; background-color: #EEE; border-radius: 15px;" action="/message" method="post">
+        <div>
+          <label for="name">Name:</label>
+          <input type="text" class="form-control" name="name">
+        </div>
+        <div>
+          <label for="weight">New Message:</label>
+          <textarea class="form-control" rows="5" name="message"></textarea>
+        </div>
+        <br>
+        <button type="submit" class="btn btn-dark">Post New Message</button>
+      </form>
+
+    </div>
+    <% if(messages != undefined){ %>
+      <% for(var i in messages){ %>
+        <div style="width: 75%; padding: 15px; background-color: #EEE; border-radius: 15px; margin: 15px 0px;">
+          <h4>Name: <%= messages[i].name %></h4>
+          <h4>Message: <%= messages[i].message %></h4>
+          <h4>---</h4>
+          <% if(messages[i].comments != undefined){ %>
+            <% for(var j=0; j<messages[i].comments.length; j++){ %>
+              <p style="line-height: 10px;">Name: <%= messages[i].comments[j].name %></p>
+              <p style="line-height: 10px;">Comment: <%= messages[i].comments[j].comment%></p>
+              <p>---</p>
+            <% } %>
+            </div>
+          <% } %>
+          <div>
+            <form id="form" style="width: 75%; padding: 15px; background-color: #EEE; border-radius: 15px;" action="/comment/<%= messages[i].id %>" method="post">
+              <div>
+                <label for="name">Name:</label>
+                <input type="text" class="form-control" name="name">
+              </div>
+              <div>
+                <label for="weight">New Comment:</label>
+                <textarea class="form-control" rows="5" name="comment"></textarea>
+              </div>
+              <br>
+              <button type="submit" class="btn btn-dark">Post Comment</button>
+              </form>
+          </div>
+        <% } %>
+      <% } %>
+  </div>
+
+</body>
+
+</html>
