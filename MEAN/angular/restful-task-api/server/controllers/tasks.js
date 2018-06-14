@@ -4,7 +4,13 @@ var Task = mongoose.model('Task');
 module.exports = {
     show: function (req, res) {
         Task.find({}, function (err, tasks) {
+            if (err){
+                console.log("Error:", err);
+                res.json(err);
+            }
+            else{
             res.json(tasks);
+            }
         });
     },
     new: function (req, res) {
