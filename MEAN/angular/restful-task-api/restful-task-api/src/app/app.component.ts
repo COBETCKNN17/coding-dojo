@@ -9,13 +9,23 @@ import { HttpService } from './http.service';
 
 export class AppComponent implements OnInit {
   title = 'Restful Tasks API';
-  tasks ;
+  tasks;
+  taskIndex;
+  taskIndex1;
+  clicked = false;
 
   constructor(private _httpService: HttpService) { }
 
   ngOnInit() {
-    this.getTasksFromService();
+    // this.getTasksFromService();
   }
+
+  showDetails($event,taskIndex){
+    this.clicked = true;
+    this.taskIndex1=this.tasks[taskIndex];
+    console.log(this.taskIndex1);
+  }
+
   getTasksFromService() {
     let observable = this._httpService.getTasks();
     observable.subscribe(data => {
