@@ -26,7 +26,7 @@ module.exports = {
         });
     },
     remove: function (req, res) {
-        Task.remove({ id: req.params.id }, function (err, task) {
+        Task.remove({ _id: req.params.id }, function (err, task) {
             if (err) {
                 console.log("Error:", err);
                 res.json(err);

@@ -9,28 +9,56 @@ import { HttpService } from './http.service';
 
 export class AppComponent implements OnInit {
   title = 'Restful Tasks API';
-  tasks;
-  taskIndex;
-  taskIndex1;
-  clicked = false;
+  new_task: any;
+  updated_task: any;
+  tasks: any;
+  task = {};
 
   constructor(private _httpService: HttpService) { }
 
   ngOnInit() {
-    // this.getTasksFromService();
+    this.new_task = { title: "", description: "" }
+    this.updated_task = { title: "", description: "" }
   }
 
-  showDetails($event,taskIndex){
-    this.clicked = true;
-    this.taskIndex1=this.tasks[taskIndex];
-    console.log(this.taskIndex1);
+
+  newTask() {
+    let observable = this._httpService.newTask(this.new_task);
+    observable.subscribe(data => {
+      console.log("newTask says:", data)
+    })
+    this.new_task = { title: "", description: "" }
   }
 
-  getTasksFromService() {
+  getTasks() {
     let observable = this._httpService.getTasks();
     observable.subscribe(data => {
-      console.log("Got our tasks!", data);
       this.tasks = data;
+      console.log("Got the tasks!", this.tasks);
+    })
+  }
+
+  showOne(id) {
+    console.log(id);
+    let observable = this._httpService.showOne(id);
+    observable.subscribe(data => {
+      this.task = data;
+      console.log(this.task);
     });
+  }
+
+  editTask(id) {
+    let observable = this._httpService.editTask(id, this.updated_task);
+    observable.subscribe(data => {
+      console.log(data)
+    })
+    this.updated_task = { title: "", description: "" }
+  }
+
+  deleteTask(id) {
+    let observable = this._httpService.deleteTask(id);
+    observable.subscribe(data => {
+      console.log(data);
+    })
   }
 }

@@ -1,17 +1,51 @@
-<!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
   <h1>
     {{ title }}
   </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+
+  <h2>New Task</h2>
+  <form (submit)="newTask()">
+    <p>{{ new_task | json }}</p>
+    <input type="text" name="new_task.title" [(ngModel)]="new_task.title" placeholder="Title" />
+    <br>
+    <br>
+    <input type="text" name="new_task.description" [(ngModel)]="new_task.description" placeholder="Description" />
+    <br>
+    <br>
+    <input type="submit" value="Create Task" />
+  </form>
+
+  <h2>Task List</h2>
+
+  <button (click)="getTasks($event)">Get All Tasks</button>
+
+  <p *ngFor="let task of tasks" style="background-color: #EEE; padding: 5px; border-radius: 15px; width: 20%; margin: 10px auto;">
+    <b>{{task['title']}}</b>
+    <br>
+    <br>
+    <!--  {{task['_id']}} -->
+    <button (click)="showOne( task['_id'] )">Details</button> |
+    <button (click)="updated_task = task">Update</button> |
+    <button (click)="deleteTask( task['_id'] )">Delete</button>
+    <br>
+    <br>
+
+  </p>
+
+  <p *ngIf="task['description']">
+    Details: {{task['description']}}
+  </p>
+
+  <h2>Edit Task</h2>
+  <form (submit)="editTask( updated_task._id )">
+    <p>{{ updated_task | json }}</p>
+    <input type="text" name="updated_task.title" [(ngModel)]="updated_task.title" placeholder="Title" />
+    <br>
+    <br>
+    <input type="text" name="updated_task.description" [(ngModel)]="updated_task.description" placeholder="Description" />
+    <br>
+    <br>
+    <input type="submit" value="Save" />
+  </form>
+
 </div>
-
-<button (click)="getTasksFromService($event)">Get All Tasks</button>
-
-<h2>All The Tasks:</h2>
-
-    <div *ngFor = "let task of tasks; index as i"><h2>{{task['title']}} </h2> <button (click)="showDetails($event,i)">Show Details</button>
-    
-      <div *ngIf="clicked"><p>Details: <br> {{taskIndex1['description']}}</p></div>
-    
-    </div>
