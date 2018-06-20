@@ -1,0 +1,15 @@
+<div>
+
+    <h2>Product List</h2>
+
+    <div *ngFor="let product of products" class="products">
+        <p *ngIf="product.image"><img src='{{product.image}}'></p>
+        <p><b> {{product.title}} </b></p>
+        <p> $ {{product.price}} </p>
+        <button class='btn btn-warning' [routerLink]="['edit',product._id]">Edit</button> &nbsp; &nbsp;
+        <button class='btn btn-danger' (click)='delete(product._id)'>Delete</button>
+    </div>
+
+    <router-outlet></router-outlet>
+
+</div>

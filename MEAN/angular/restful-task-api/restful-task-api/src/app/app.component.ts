@@ -25,9 +25,10 @@ export class AppComponent implements OnInit {
   newTask() {
     let observable = this._httpService.newTask(this.new_task);
     observable.subscribe(data => {
-      console.log("newTask says:", data)
+      console.log("newTask says:", data);
     })
-    this.new_task = { title: "", description: "" }
+    this.new_task = { title: "", description: "" };
+    this.getTasks();
   }
 
   getTasks() {
@@ -50,15 +51,17 @@ export class AppComponent implements OnInit {
   editTask(id) {
     let observable = this._httpService.editTask(id, this.updated_task);
     observable.subscribe(data => {
-      console.log(data)
+      console.log(data);
+      this.getTasks();
     })
-    this.updated_task = { title: "", description: "" }
+    this.updated_task = { title: "", description: "" };
   }
 
   deleteTask(id) {
     let observable = this._httpService.deleteTask(id);
     observable.subscribe(data => {
       console.log(data);
-    })
+      this.getTasks();
+    });
   }
 }

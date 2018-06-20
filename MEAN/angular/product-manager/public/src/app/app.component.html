@@ -1,0 +1,21 @@
+<div class="container">
+
+<h1>
+  {{ title }}
+</h1>
+
+<div class="navigation">
+
+<button type="button" class="btn btn-secondary" [routerLink]="['home']">Home</button>
+<button type="button" class="btn btn-secondary" [routerLink]="['list']">Product List</button>
+<button type="button" class="btn btn-secondary" [routerLink]="['create']">Add New Product</button>
+
+</div>
+
+<div class="main">
+
+  <router-outlet></router-outlet>
+
+</div>
+
+</div>

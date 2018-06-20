@@ -22,6 +22,7 @@ export class HttpService {
   }
 
   newTask(new_task) {
+    this.getTasks();
     return this._http.post('/tasks/new', new_task);
   }
 

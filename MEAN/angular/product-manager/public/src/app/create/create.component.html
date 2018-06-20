@@ -1,0 +1,30 @@
+<h2>Add a New Product</h2>
+
+<form #productForm="ngForm" (submit)='onClick($event)'>
+    <br>
+
+    Name :
+    <input type="text" name="product.title" [(ngModel)]="product.title" required>*
+    <br>
+    <br> 
+    Price : &nbsp;
+    <input type="text" name="product.price" [(ngModel)]="product.price" required>*
+    <br>
+    <br> 
+    Image :
+    <input type="text" name="product.image" [(ngModel)]="product.image">
+    <br>
+    <br>
+
+    <div *ngIf='errorsPresent'>
+
+        <p *ngFor='let err of errors' style="color: red;"> {{err.errorMessage}}</p>
+
+    </div>
+
+    <button class="btn btn-success" [disabled]="productForm.form.invalid">Create</button> &nbsp; | &nbsp;
+    <button class="btn btn-danger" (click)='cancel()'>Cancel</button>
+    <br>
+    <br>
+
+</form>

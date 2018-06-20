@@ -1,0 +1,14 @@
+<div class="one-cake-container">
+
+  <div class="show-cake" *ngIf="selectedCake.name != null">
+    <p>Baked by: {{selectedCake.name}}</p>
+    <img src="{{ selectedCake.image }}" alt="Cake">
+  </div>
+
+  <div class="rating" *ngFor="let rating of selectedCake.rating">
+    <p>Rating: {{rating.rating}}</p>
+    <p>Comment: {{rating.comment}}</p>
+    <p>---</p>
+  </div>
+  
+</div>

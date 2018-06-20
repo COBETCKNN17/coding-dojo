@@ -1,0 +1,15 @@
+.products{
+    margin: 20px auto; 
+    display: inline-block; 
+    background-color: #ddd; 
+    height: 100%; 
+    vertical-align: top; 
+    margin: 10px; 
+    padding: 10px;
+    border-radius: 10px;
+}
+
+img{
+    width: 350px; 
+    border-radius: 10px;
+}
