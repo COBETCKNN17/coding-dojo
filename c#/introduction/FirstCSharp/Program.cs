@@ -6,7 +6,9 @@ namespace FirstCSharp
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            string triangle = "Bill Cipher";
+            Console.WriteLine($"My pal, {triangle}, is very cool.");
+            Console.WriteLine($"My name is {0}, I am " + 28 + " years old", "Tim");  
         }
     }
 }
