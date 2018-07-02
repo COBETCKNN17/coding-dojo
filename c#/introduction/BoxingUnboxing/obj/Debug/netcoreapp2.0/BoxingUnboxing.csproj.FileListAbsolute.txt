@@ -1,0 +1,10 @@
+C:\Users\Nat\Documents\coding-dojo\c#\introduction\BoxingUnboxing\obj\Debug\netcoreapp2.0\BoxingUnboxing.csproj.CoreCompileInputs.cache
+C:\Users\Nat\Documents\coding-dojo\c#\introduction\BoxingUnboxing\obj\Debug\netcoreapp2.0\BoxingUnboxing.AssemblyInfoInputs.cache
+C:\Users\Nat\Documents\coding-dojo\c#\introduction\BoxingUnboxing\obj\Debug\netcoreapp2.0\BoxingUnboxing.AssemblyInfo.cs
+C:\Users\Nat\Documents\coding-dojo\c#\introduction\BoxingUnboxing\bin\Debug\netcoreapp2.0\BoxingUnboxing.deps.json
+C:\Users\Nat\Documents\coding-dojo\c#\introduction\BoxingUnboxing\bin\Debug\netcoreapp2.0\BoxingUnboxing.runtimeconfig.json
+C:\Users\Nat\Documents\coding-dojo\c#\introduction\BoxingUnboxing\bin\Debug\netcoreapp2.0\BoxingUnboxing.runtimeconfig.dev.json
+C:\Users\Nat\Documents\coding-dojo\c#\introduction\BoxingUnboxing\bin\Debug\netcoreapp2.0\BoxingUnboxing.dll
+C:\Users\Nat\Documents\coding-dojo\c#\introduction\BoxingUnboxing\bin\Debug\netcoreapp2.0\BoxingUnboxing.pdb
+C:\Users\Nat\Documents\coding-dojo\c#\introduction\BoxingUnboxing\obj\Debug\netcoreapp2.0\BoxingUnboxing.dll
+C:\Users\Nat\Documents\coding-dojo\c#\introduction\BoxingUnboxing\obj\Debug\netcoreapp2.0\BoxingUnboxing.pdb
