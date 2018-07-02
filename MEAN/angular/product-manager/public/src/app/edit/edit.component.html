@@ -1,3 +1,27 @@
-<p>
-  edit works!
-</p>
+<div>
+  <form #editForm="ngForm" (submit)='onClick($event)'>
+
+      <h2>Edit Item</h2>
+      <br>
+    <!-- <p>{{ product | json }}</p> -->
+    Name :
+    <input type="text" [value] = "title" name="product.title" [(ngModel)]="product.title" required>*
+    <br>
+    <br> Price :
+    <input type="text" [value] = "price" name="product.price" [(ngModel)]="product.price" required>*
+    <br>
+    <br> Image :
+    <input type="text" [value] = "image" name="product.image" [(ngModel)]="product.image">
+    <br>
+    <br>
+    <div *ngIf='errorsPresent'>
+      <p *ngFor='let error of errors' style="color: red;"> {{error.errorMessage}}</p>
+
+    </div>
+    <button type="submit" class="btn btn-success" [disabled]="editForm.form.invalid">Save Edits</button> &nbsp; &nbsp;
+    <button class="btn btn-danger"  (click)='cancel()'>Cancel</button>
+  
+    <br>
+    <br>
+  </form>
+</div>

@@ -6,7 +6,7 @@
         <p *ngIf="product.image"><img src='{{product.image}}'></p>
         <p><b> {{product.title}} </b></p>
         <p> $ {{product.price}} </p>
-        <button class='btn btn-warning' [routerLink]="['edit',product._id]">Edit</button> &nbsp; &nbsp;
+        <button class='btn btn-warning' [routerLink]="['/edit', product._id]">Edit</button> &nbsp; &nbsp;
         <button class='btn btn-danger' (click)='delete(product._id)'>Delete</button>
     </div>
 

@@ -10,10 +10,8 @@ const routes: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
     { path: 'home', component: HomeComponent },
     { path: 'create', component: CreateComponent },
-    { path: 'list', component: ListComponent, children: [
-            { path: 'edit/:id', component: EditComponent },
-        ]
-    },
+    { path: 'list', component: ListComponent},
+    { path: 'edit/:id', component: EditComponent },
     { path: '**', component: FileNotFoundComponent },
 ];
 
