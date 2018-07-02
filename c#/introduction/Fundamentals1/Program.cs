@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic; // To use lists
 
 namespace Fundamentals1
 {
@@ -47,7 +48,7 @@ namespace Fundamentals1
             }
         }
 
-        static void Main()
+        static void Main(string[] args)
         {
             print1to255();
             divideBy3and5();
