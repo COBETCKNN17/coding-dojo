@@ -1,0 +1,10 @@
+C:\Users\Nat\Documents\coding-dojo\c#\data-structures\SinglyLinkedList\obj\Debug\netcoreapp2.0\SinglyLinkedList.csproj.CoreCompileInputs.cache
+C:\Users\Nat\Documents\coding-dojo\c#\data-structures\SinglyLinkedList\obj\Debug\netcoreapp2.0\SinglyLinkedList.AssemblyInfoInputs.cache
+C:\Users\Nat\Documents\coding-dojo\c#\data-structures\SinglyLinkedList\obj\Debug\netcoreapp2.0\SinglyLinkedList.AssemblyInfo.cs
+C:\Users\Nat\Documents\coding-dojo\c#\data-structures\SinglyLinkedList\bin\Debug\netcoreapp2.0\SinglyLinkedList.deps.json
+C:\Users\Nat\Documents\coding-dojo\c#\data-structures\SinglyLinkedList\bin\Debug\netcoreapp2.0\SinglyLinkedList.runtimeconfig.json
+C:\Users\Nat\Documents\coding-dojo\c#\data-structures\SinglyLinkedList\bin\Debug\netcoreapp2.0\SinglyLinkedList.runtimeconfig.dev.json
+C:\Users\Nat\Documents\coding-dojo\c#\data-structures\SinglyLinkedList\bin\Debug\netcoreapp2.0\SinglyLinkedList.dll
+C:\Users\Nat\Documents\coding-dojo\c#\data-structures\SinglyLinkedList\bin\Debug\netcoreapp2.0\SinglyLinkedList.pdb
+C:\Users\Nat\Documents\coding-dojo\c#\data-structures\SinglyLinkedList\obj\Debug\netcoreapp2.0\SinglyLinkedList.dll
+C:\Users\Nat\Documents\coding-dojo\c#\data-structures\SinglyLinkedList\obj\Debug\netcoreapp2.0\SinglyLinkedList.pdb
