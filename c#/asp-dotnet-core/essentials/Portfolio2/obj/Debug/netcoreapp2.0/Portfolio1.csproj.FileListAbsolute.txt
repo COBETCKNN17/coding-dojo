@@ -1,0 +1,10 @@
+C:\Users\Nat\Documents\coding-dojo\c#\asp-dotnet-core\essentials\Portfolio1\bin\Debug\netcoreapp2.0\Portfolio1.deps.json
+C:\Users\Nat\Documents\coding-dojo\c#\asp-dotnet-core\essentials\Portfolio1\bin\Debug\netcoreapp2.0\Portfolio1.runtimeconfig.json
+C:\Users\Nat\Documents\coding-dojo\c#\asp-dotnet-core\essentials\Portfolio1\bin\Debug\netcoreapp2.0\Portfolio1.runtimeconfig.dev.json
+C:\Users\Nat\Documents\coding-dojo\c#\asp-dotnet-core\essentials\Portfolio1\bin\Debug\netcoreapp2.0\Portfolio1.dll
+C:\Users\Nat\Documents\coding-dojo\c#\asp-dotnet-core\essentials\Portfolio1\bin\Debug\netcoreapp2.0\Portfolio1.pdb
+C:\Users\Nat\Documents\coding-dojo\c#\asp-dotnet-core\essentials\Portfolio1\obj\Debug\netcoreapp2.0\Portfolio1.csproj.CoreCompileInputs.cache
+C:\Users\Nat\Documents\coding-dojo\c#\asp-dotnet-core\essentials\Portfolio1\obj\Debug\netcoreapp2.0\Portfolio1.AssemblyInfoInputs.cache
+C:\Users\Nat\Documents\coding-dojo\c#\asp-dotnet-core\essentials\Portfolio1\obj\Debug\netcoreapp2.0\Portfolio1.AssemblyInfo.cs
+C:\Users\Nat\Documents\coding-dojo\c#\asp-dotnet-core\essentials\Portfolio1\obj\Debug\netcoreapp2.0\Portfolio1.dll
+C:\Users\Nat\Documents\coding-dojo\c#\asp-dotnet-core\essentials\Portfolio1\obj\Debug\netcoreapp2.0\Portfolio1.pdb
