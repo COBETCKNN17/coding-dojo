@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <title>Portfolio</title>
+    </head>
+    <body>
+
+        <h2>Some of my favorites:</h2>
+        @{
+            var NatsCoolList = new List<string>{
+                "Bill Cipher",
+                "Eridan Ampora",
+                "Starscream",
+                "Will VanDyke"
+            };
+        
+        foreach(var item in NatsCoolList)
+        {
+            <p>@item</p>
+        }
+    }
+
+
+    </body>
+</html>
