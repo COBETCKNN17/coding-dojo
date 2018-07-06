@@ -1,0 +1,16 @@
+<html>
+    <head>
+       <title>Names</title>
+    </head>
+    <body>
+        @model string[]
+            <h3>Here are some users!</h3>
+
+            @{
+                foreach (var name in @Model)
+                {
+                    <p>@name</p>
+                }
+            }
+    </body>
+</html>

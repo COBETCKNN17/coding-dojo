@@ -1,0 +1,10 @@
+C:\Users\Nat\Documents\coding-dojo\c#\asp-dotnet-core\full-stack\ViewModelFun\bin\Debug\netcoreapp2.0\ViewModelFun.deps.json
+C:\Users\Nat\Documents\coding-dojo\c#\asp-dotnet-core\full-stack\ViewModelFun\bin\Debug\netcoreapp2.0\ViewModelFun.runtimeconfig.json
+C:\Users\Nat\Documents\coding-dojo\c#\asp-dotnet-core\full-stack\ViewModelFun\bin\Debug\netcoreapp2.0\ViewModelFun.runtimeconfig.dev.json
+C:\Users\Nat\Documents\coding-dojo\c#\asp-dotnet-core\full-stack\ViewModelFun\bin\Debug\netcoreapp2.0\ViewModelFun.dll
+C:\Users\Nat\Documents\coding-dojo\c#\asp-dotnet-core\full-stack\ViewModelFun\bin\Debug\netcoreapp2.0\ViewModelFun.pdb
+C:\Users\Nat\Documents\coding-dojo\c#\asp-dotnet-core\full-stack\ViewModelFun\obj\Debug\netcoreapp2.0\ViewModelFun.csproj.CoreCompileInputs.cache
+C:\Users\Nat\Documents\coding-dojo\c#\asp-dotnet-core\full-stack\ViewModelFun\obj\Debug\netcoreapp2.0\ViewModelFun.AssemblyInfoInputs.cache
+C:\Users\Nat\Documents\coding-dojo\c#\asp-dotnet-core\full-stack\ViewModelFun\obj\Debug\netcoreapp2.0\ViewModelFun.AssemblyInfo.cs
+C:\Users\Nat\Documents\coding-dojo\c#\asp-dotnet-core\full-stack\ViewModelFun\obj\Debug\netcoreapp2.0\ViewModelFun.dll
+C:\Users\Nat\Documents\coding-dojo\c#\asp-dotnet-core\full-stack\ViewModelFun\obj\Debug\netcoreapp2.0\ViewModelFun.pdb
