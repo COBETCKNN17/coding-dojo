@@ -11,6 +11,7 @@
   <form action="/process" method="POST">
     Your Name:
     <input type="text" name="name" asp-for="name">
+    <span asp-validation-for="name"></span>
     <br> Dojo Location:
     <select name="location" asp-for="location" id="location">
       <option value="Chicago">Chicago</option>
@@ -18,6 +19,7 @@
       <option value="Seattle">Seattle</option>
       <option value="The Moon">The Moon</option>
     </select>
+    <span asp-validation-for="location"></span>
     <br> Favorite Language:
     <select name="favLanguage" asp-for="favLanguage">
       <option value="Python">Python</option>
@@ -25,9 +27,11 @@
       <option value="C#">C#</option>
       <option value="JavaScript">JavaScript</option>
     </select>
+    <span asp-validation-for="favLanguage"></span>
     <br>
     Comment (optional):
     <input type="textarea" name="comment" asp-for="comment">
+    <span asp-validation-for="comment"></span>
     <br>
     <input type="submit" name="button" value="Submit">
   </form>

@@ -37,7 +37,7 @@ using DojoSurvey.Models;
                 else
                 {
                     Console.WriteLine("NO!");
-                    return View("Index");
+                    //return View("Index");
                 }
             }
         }
