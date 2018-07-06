@@ -1,0 +1,19 @@
+<html>
+    <head>
+       <title>Survey</title>
+    </head>
+    <body>
+        <h1>Submitted Info:</h1>
+        @using DojoSurvey.Models
+        @model User
+        <p>
+            <b>Name:</b> @Model.name
+            <br>
+            <b>Dojo Location:</b> @Model.location
+            <br>
+            <b>Favorite Language:</b> @Model.favLanguage
+            <br>
+            <b>Comments:</b> @Model.comment
+        </p>
+    </body>
+</html>
