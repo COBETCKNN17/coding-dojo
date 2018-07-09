@@ -1,0 +1,24 @@
+﻿<h1>Random Passcode (passcode #@ViewBag.clickedCount)</h1>
+
+<p style="border: 2px solid black; padding: 5px; width: 200px; text-align:center; margin: 0px auto;">@ViewBag.newString</p>
+
+<br>
+
+<a href="/generate"> <button class="btn btn-primary" id="btn">Generate Random Passcode</button></a>
+
+<script>
+ $(document).ready(function(){
+    $("#btn").click(function(){
+    
+    var passcode = "";
+    var characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+
+
+  for (var i = 0; i < 14; i++){
+    passcode += characters.charAt(Math.floor(Math.random() * characters.length));
+    
+    $(".p").text(passcode);
+    });
+});
+
+</script>

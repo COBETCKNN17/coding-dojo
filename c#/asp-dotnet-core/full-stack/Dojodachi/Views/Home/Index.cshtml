@@ -1,0 +1,40 @@
+﻿<center>
+
+<h1>Bill Cipher Simulator</h1>
+
+<p><span>Fullness: @ViewBag.Fullness</span> ‣ <span>Happiness: @ViewBag.Happiness</span> ‣ <span>Meals: @ViewBag.Meals</span> ‣ <span>Energy: @ViewBag.Energy</span></p>
+
+<div id="tamagotchi">
+
+@if (!ViewBag.Dead && !ViewBag.Won){
+    <img src="~/images/bill_alive.png" width="200px">
+    <br><br>
+    <p>@ViewBag.Message</p>
+    <br>
+    <a href="/feed"><button class="btn btn-primary">Feed</button></a>
+    <a href="/play"><button class="btn btn-primary">Play</button></a>
+    <a href="/work"><button class="btn btn-primary">Work</button></a>
+    <a href="/sleep"><button class="btn btn-primary">Sleep</button></a>
+}
+
+@if(ViewBag.Won){
+    <img src="~/images/bill_win.png" width="200px">
+    <br><br>
+    <p>@ViewBag.Message</p>
+    <br>
+    <a href="/restart"><button class="btn btn-danger">Restart?</button></a>
+
+}
+
+@if(ViewBag.Dead){
+    <img src="~/images/bill_dead.png" width="200px">
+    <br><br>
+    <p>@ViewBag.Message</p>
+    <br>
+    <a href="/restart"><button class="btn btn-danger">Restart?</button></a>
+
+}
+
+</center>
+
+</div>
