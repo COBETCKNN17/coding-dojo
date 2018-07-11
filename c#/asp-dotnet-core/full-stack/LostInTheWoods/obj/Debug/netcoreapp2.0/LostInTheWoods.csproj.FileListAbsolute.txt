@@ -1,0 +1,10 @@
+C:\Users\Nat\Documents\coding-dojo\c#\asp-dotnet-core\full-stack\LostInTheWoods\obj\Debug\netcoreapp2.0\LostInTheWoods.csproj.CoreCompileInputs.cache
+C:\Users\Nat\Documents\coding-dojo\c#\asp-dotnet-core\full-stack\LostInTheWoods\obj\Debug\netcoreapp2.0\LostInTheWoods.AssemblyInfoInputs.cache
+C:\Users\Nat\Documents\coding-dojo\c#\asp-dotnet-core\full-stack\LostInTheWoods\obj\Debug\netcoreapp2.0\LostInTheWoods.AssemblyInfo.cs
+C:\Users\Nat\Documents\coding-dojo\c#\asp-dotnet-core\full-stack\LostInTheWoods\bin\Debug\netcoreapp2.0\LostInTheWoods.deps.json
+C:\Users\Nat\Documents\coding-dojo\c#\asp-dotnet-core\full-stack\LostInTheWoods\bin\Debug\netcoreapp2.0\LostInTheWoods.runtimeconfig.json
+C:\Users\Nat\Documents\coding-dojo\c#\asp-dotnet-core\full-stack\LostInTheWoods\bin\Debug\netcoreapp2.0\LostInTheWoods.runtimeconfig.dev.json
+C:\Users\Nat\Documents\coding-dojo\c#\asp-dotnet-core\full-stack\LostInTheWoods\bin\Debug\netcoreapp2.0\LostInTheWoods.dll
+C:\Users\Nat\Documents\coding-dojo\c#\asp-dotnet-core\full-stack\LostInTheWoods\bin\Debug\netcoreapp2.0\LostInTheWoods.pdb
+C:\Users\Nat\Documents\coding-dojo\c#\asp-dotnet-core\full-stack\LostInTheWoods\obj\Debug\netcoreapp2.0\LostInTheWoods.dll
+C:\Users\Nat\Documents\coding-dojo\c#\asp-dotnet-core\full-stack\LostInTheWoods\obj\Debug\netcoreapp2.0\LostInTheWoods.pdb
