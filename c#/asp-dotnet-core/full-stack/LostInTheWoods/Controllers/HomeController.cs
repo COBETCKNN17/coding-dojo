@@ -11,18 +11,18 @@ namespace LostInTheWoods.Controllers
 {
     public class HomeController : Controller
     {
-    private readonly TrailFactory _userFactory;
+    private readonly TrailFactory _trailFactory;
  
         public HomeController(TrailFactory connect)
         {
-            _userFactory = connect;
+            _trailFactory = connect;
         }
 
         [HttpGet]
         [Route("")]
         public IActionResult Index()
         {
-            ViewBag.trails = _userFactory.GetAllTrails();
+            ViewBag.trails = _trailFactory.GetTrails();
             return View("Index");
         }
 
@@ -34,12 +34,12 @@ namespace LostInTheWoods.Controllers
         }
 
         [HttpPost]
-        [Route("createTrail")]
-        public IActionResult createTrail(Trail t)
+        [Route("CreateTrail")]
+        public IActionResult CreateTrail(Trail trail)
         {
             if (ModelState.IsValid)
             {
-                _userFactory.AddTrail(t);   
+                _trailFactory.AddTrail(trail);   
                 return RedirectToAction("Index");
             }
             return View("Add");
@@ -49,7 +49,7 @@ namespace LostInTheWoods.Controllers
         [Route("trails/{idtrails}")]
         public IActionResult Trails(int idtrails)
         {
-            ViewBag.trail = _userFactory.GetAllTrails().Single(a => a.idtrails == idtrails);
+            ViewBag.trail = _trailFactory.GetTrails().Single(a => a.idtrails == idtrails);
             return View();
         }
     }

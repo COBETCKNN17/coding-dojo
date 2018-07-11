@@ -32,7 +32,7 @@ namespace LostInTheWoods.Factory
             }
         }
 
-        public IEnumerable<Trail> GetAllTrails()
+        public IEnumerable<Trail> GetTrails()
         {   
             using (IDbConnection dbConnection = Connection) 
             {

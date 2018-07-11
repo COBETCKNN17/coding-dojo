@@ -12,3 +12,29 @@
 
 <h3>Elevation Change:</h3>
 <h4>@ViewBag.trail.ElevationChange feet</h4>
+
+<h3>Latitude:</h3>
+<h4>@ViewBag.trail.Latitude</h4>
+
+<h3>Longitude:</h3>
+<h4>@ViewBag.trail.Longitude</h4>
+
+
+<h3>Map:</h3>
+
+<div id="map" style="height: 400px; width: 100%;"></div>
+<script>
+
+function initMap() {
+
+  var uluru = {lat: @ViewBag.trail.Latitude, lng: @ViewBag.trail.Longitude};
+
+  var map = new google.maps.Map(
+      document.getElementById('map'), {zoom: 4, center: uluru});
+
+  var marker = new google.maps.Marker({position: uluru, map: map});
+
+}
+</script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD2gKv4jd1OFaIskBWmrRVgZQCUtCQFZJY&callback=initMap">
+</script>
