@@ -1,0 +1,18 @@
+﻿@{
+    ViewData["Title"] = "Reviews Dashboard";
+}
+
+<h1>Reviews</h1>
+
+@foreach(var r in ViewBag.allReviews){
+
+    <h3>@r.restaurant_name</h3>
+    <h4>Reviewed by: @r.reviewer_name on @r.created_at</h4>
+    <p>Rating: @r.rating stars</p>
+    <p>Visted restaurant on: @r.visited</p>
+    <p>Review: @r.review_comments</p>
+    <br>
+    <p>---</p>
+
+}
+
