@@ -1,0 +1,56 @@
+﻿@using DefaultProject.Models
+@model User
+
+<h1>Login/Registration</h1>
+
+<h2>Register</h2>
+<form  action="create" method="POST">
+  <span asp-validation-for="first_name"></span>
+    <label asp-for="first_name">First Name: <input type="text" name="first_name">
+    </label>
+    <br>
+
+      <span asp-validation-for="last_name"></span>
+    <label asp-for="last_name">Last Name: <input type="text" name="last_name">
+    </label>
+    <br>
+
+     <span asp-validation-for="email"></span>
+    <label asp-for="email">Email: <input type="email" name="email">
+    </label>
+    <br>
+
+    
+     <span asp-validation-for="password"></span>
+    <label asp-for="password">Password: <input type="password" name="password">
+    </label>
+    <br>
+
+    <span asp-validation-for="confirm_password"></span>
+    <label asp-for="confirm_password">Repeat Password: <input type="password" name="confirm_password">
+    </label>
+<br>
+    <input type="submit" value="Register">
+
+</form>
+
+
+<br><br>
+<h1>Login</h1>
+<form action="login" method="POST">
+
+<span asp-validation-for="email"></span>
+    <label asp-for="email">Email: <input type="email" name="CheckEmail">
+    </label>
+    <br>
+    
+     <span asp-validation-for="password"></span>
+    <label asp-for="password">Password: <input type="password" name="CheckPassword">
+    </label>
+<br>
+    <input type="submit" value="Login">
+
+
+
+
+</form>

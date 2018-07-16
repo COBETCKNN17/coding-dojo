@@ -1,0 +1,46 @@
+﻿@model DefaultProject.Models.Product
+
+<div class="left">
+
+<h2>Search</h2>
+
+    <form action="findProducts" method="GET">
+        <input type="text" name="search" placeholder="Search..."><br><br>
+        <input type="submit" value="Filter" class="btn btn-primary">
+    </form>
+
+<h2>Create Product</h2>
+
+<form asp-action="createProduct" asp-controller="Home">
+    <p>Name: <br> <input asp-for="name"></p>
+    <span asp-validation-for="name"></span>
+
+    <p>URL: <br> <input asp-for="url"></p>
+    <span asp-validation-for="url"></span>
+
+    <p>Description: <br> <input asp-for="description"></p>
+    <span asp-validation-for="description"></span>
+
+    <p>Quantity: <br> <input asp-for="quantity"></p>
+    <span asp-validation-for="quantity"></span>
+
+    <br>
+
+    <input type="submit" value="Create" class="btn btn-success">
+</form>
+</div>
+
+<div class="right">
+    <div class="products">
+        @{
+            foreach(var product in @ViewBag.products){
+                <div class="product">
+                    <img src="@product.url" class="image">
+                    <p>@product.name</p>
+                    <p>(@product.quantity left in stock)</p>
+                </div>
+
+            }
+        }
+    </div>
+</div>
