@@ -1,0 +1,47 @@
+﻿@using DefaultProject.Models
+@model User
+
+<h1>Welcome @ViewBag.currentUser.first_name @ViewBag.currentUser.last_name</h1>
+<a href="/logout" class="btn btn-danger">Log Out</a>
+
+<hr>
+
+
+<h2>Post a Message</h2>
+<form action="/dashboard/addmessage" method="POST">
+
+    <input type="text" name="newMessage"><br><br>
+    
+    <input type="submit" value="Post a Message" class="btn btn-success">
+
+</form>
+
+<br><hr><br>
+
+@foreach(var user in ViewBag.allUsers){
+
+    @foreach(var message in user.messages){
+        
+        <h3>@message.created_at.ToString("MM/dd/yyyy") - @user.first_name says:</h3>
+        <p>@message.text</p>
+        <h4>Comments</h4>
+        @foreach(var comment in message.comments){
+            <p>@comment.user.first_name @comment.created_at.ToString("MM/dd/yyyy") <br> @comment.text </p>
+          
+        }
+
+
+
+    <h4>Post a Comment</h4>
+    <form action="/dashboard/addcomment" method="POST">
+    <input name="messageID" value="@message.id" hidden>
+
+    <input type="text" name="newComment"><br><br>
+    
+    <input type="submit" value="Comment" class="btn btn-primary">
+
+    </form> 
+    <br><hr><br>
+    }
+}
+
