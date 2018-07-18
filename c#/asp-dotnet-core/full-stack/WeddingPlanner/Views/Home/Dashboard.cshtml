@@ -29,9 +29,22 @@
                         </form>
                     }
                     else{
-                        <form action="/rsvp/@wedding.id" method="POST">
+                        bool print = true;
+                        foreach (var rsvp in @ViewBag.rsvps_cool){
+                            @if (rsvp.user.id == @ViewBag.currentUser.id && rsvp.wedding.id == @wedding.id){
+                                print = false;
+                            }
+                        }
+                        @if (print){
+                            <form action="/rsvp/@wedding.id" method="POST">
                             <input type="submit" value="RSVP" class="btn btn-primary">
-                        </form>
+                            </form>
+                        }
+                        else{
+                            <form action="/rsvp/@wedding.id" method="POST">
+                            <input type="submit" value="Un-RSVP" class="btn btn-primary">
+                            </form>
+                        }
                     }
                 </td>
             </tr>

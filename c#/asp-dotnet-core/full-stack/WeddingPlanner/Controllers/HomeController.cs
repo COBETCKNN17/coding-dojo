@@ -103,10 +103,12 @@ namespace DefaultProject.Controllers
                 List<Wedding> rsvps = _context.weddings.Include(u => u.rsvps).ToList();
                 List<Wedding> allWeddings = _context.weddings.Include(w => w.creator).ToList(); 
                 User currentUser = _context.users.SingleOrDefault(u => u.id == UserId);
+                List<RSVP> rsvps_cool = _context.rsvps.Include(r => r.wedding).Include(r => r.user).ToList();
 
                 ViewBag.allWeddings = allWeddings;
                 ViewBag.currentUser = currentUser;
                 ViewBag.rsvps = rsvps;
+                ViewBag.rsvps_cool = rsvps_cool;
 
                 return View("Dashboard");
             }
@@ -127,7 +129,7 @@ namespace DefaultProject.Controllers
                 string todayFormat = today.ToString("yyyy-MM-dd");
 
                 ViewBag.today = todayFormat;
-                
+
                 return View("Create");
             }
             else
