@@ -1,0 +1,28 @@
+﻿@model DefaultProject.Models.Wedding
+
+<h2>Create a New Wedding</h2>
+
+<form asp-action="createWedding" asp-controller="Home" method="POST">
+
+    <p>Wedder One: <br> <input asp-for="wedder1" name="wedder1"></p>
+    <span asp-validation-for="wedder1"></span>
+
+    <p>Wedder Two: <br> <input asp-for="wedder2" name="wedder2"></p>
+    <span asp-validation-for="wedder2"></span>
+
+    <p>Address: <br> <input asp-for="address" name="address"></p>
+    <span asp-validation-for="address"></span>
+
+    <p>Date: <br> <input asp-for="date" type="date" name="date" min="@ViewBag.today"></p>
+    <span asp-validation-for="date"></span>
+
+    <br>
+
+    <input type="submit" value="Create New Wedding" class="btn btn-success">
+
+</form>
+
+<br>
+
+<a href="/dashboard" class="btn btn-danger">Go Back</a>
+

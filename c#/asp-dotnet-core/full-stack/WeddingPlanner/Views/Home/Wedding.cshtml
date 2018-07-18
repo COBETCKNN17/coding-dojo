@@ -1,0 +1,17 @@
+﻿@using DefaultProject.Models
+
+<h2>@ViewBag.currentWedding.wedder1 & @ViewBag.currentWedding.wedder2's Wedding</h2>
+
+<p><b>Date: </b> @ViewBag.currentWedding.date</p>
+
+<p><b>Address: </b> @ViewBag.currentWedding.address</p>
+
+<h3>Guest List</h3>
+
+@{
+    foreach(var r in @ViewBag.rsvps){
+        <p>@r.user.first_name @r.user.last_name</p>
+    }
+}
+
+<a href="/dashboard" class="btn btn-primary">Go Back</a>
